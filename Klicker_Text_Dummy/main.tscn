@@ -1,0 +1,53 @@
+[gd_scene load_steps=7 format=3 uid="uid://inyqsp1r2g0d"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_md7dw"]
+[ext_resource type="Script" path="res://Label.gd" id="2_4mqob"]
+[ext_resource type="Texture2D" uid="uid://dgipgdftg1cpf" path="res://Textures/blackx32.png" id="3_dmii0"]
+[ext_resource type="Script" path="res://label_apples.gd" id="3_j3hcq"]
+[ext_resource type="Script" path="res://apple_klicker.gd" id="3_uqyci"]
+[ext_resource type="PackedScene" uid="uid://bf37ss6tpx1ai" path="res://upgrades.tscn" id="6_obaoe"]
+
+[node name="main" type="Node"]
+script = ExtResource("1_md7dw")
+
+[node name="label_click_power" type="Label" parent="."]
+offset_left = 876.0
+offset_top = 24.0
+offset_right = 966.0
+offset_bottom = 76.0
+scale = Vector2(2.3118, 2.3118)
+text = "Click Power
+X"
+script = ExtResource("2_4mqob")
+
+[node name="upgrades" parent="." instance=ExtResource("6_obaoe")]
+offset_left = 837.0
+offset_top = 152.0
+offset_right = 998.0
+offset_bottom = 393.0
+scale = Vector2(1.85944, 1.85944)
+
+[node name="apple_klicker" type="TextureButton" parent="."]
+texture_filter = 1
+texture_repeat = 2
+offset_left = 331.0
+offset_top = 297.0
+offset_right = 400.0
+offset_bottom = 366.0
+scale = Vector2(3.29396, 3.29396)
+action_mode = 0
+texture_normal = ExtResource("3_dmii0")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("3_uqyci")
+
+[node name="label_apples" type="Label" parent="."]
+offset_left = 359.0
+offset_top = 109.0
+offset_right = 423.0
+offset_bottom = 173.0
+scale = Vector2(2.32124, 2.32124)
+text = "🍎🍎🍎🍎
+🍎🍎🍎🍎"
+vertical_alignment = 1
+script = ExtResource("3_j3hcq")

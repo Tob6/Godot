@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=3 uid="uid://bf37ss6tpx1ai"]
+
+[ext_resource type="Script" path="res://button_auto_click_1.gd" id="1_g1y8j"]
+[ext_resource type="Script" path="res://button_curso_1.gd" id="2_c6gr5"]
+[ext_resource type="Script" path="res://passive_income_2.gd" id="3_fp274"]
+[ext_resource type="Script" path="res://click_boost_2.gd" id="4_dpdsb"]
+
+[node name="upgrades" type="ScrollContainer"]
+offset_right = 148.0
+offset_bottom = 110.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="click_boost_1" type="Button" parent="VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+mouse_filter = 1
+text = "Click_Boost
++1 Apple per click
+🍎 50"
+script = ExtResource("2_c6gr5")
+
+[node name="Passive_Income_1" type="Button" parent="VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+mouse_filter = 1
+text = "Passive_Income
++1 Apple per sec
+🍎 125"
+script = ExtResource("1_g1y8j")
+
+[node name="click_boost_2" type="Button" parent="VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+mouse_filter = 1
+text = "Click_Boost2
++5 Apple per click
+🍎 500"
+script = ExtResource("4_dpdsb")
+
+[node name="passive_income_2" type="Button" parent="VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+mouse_filter = 1
+text = "Passive_Income2
++6 Appls per sec
+🍎 1100"
+script = ExtResource("3_fp274")
