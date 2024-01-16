@@ -8,7 +8,7 @@ var multiplier = 0
 func score_increase():
 	score += flat_increase
 
-func score_decrease_flat(amount):
+func score_decrease_flat(amount): 
 	score -= amount
 
 func increase_multiplier(amount):
