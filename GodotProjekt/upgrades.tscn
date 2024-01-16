@@ -1,0 +1,82 @@
+[gd_scene load_steps=2 format=3 uid="uid://lb6qd8sh0pvp"]
+
+[ext_resource type="Script" path="res://button_upgrade.gd" id="1_crgfb"]
+
+[node name="upgrades" type="ScrollContainer"]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="click_boost_1" type="Button" parent="VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+mouse_filter = 1
+text = "Click_Boost
++1 Apple per click
+🍎 50"
+script = ExtResource("1_crgfb")
+metadata/cost = 50.0
+metadata/click_increase = 1.0
+metadata/passive_increase = 0.0
+
+[node name="passive_income_1" type="Button" parent="VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+mouse_filter = 1
+text = "Passive_Income
++1 Apple per sec
+🍎 125"
+script = ExtResource("1_crgfb")
+metadata/cost = 125.0
+metadata/click_increase = 0.0
+metadata/passive_increase = 1.0
+
+[node name="click_boost_2" type="Button" parent="VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+mouse_filter = 1
+text = "Click_Boost2
++5 Apple per click
+🍎 500"
+script = ExtResource("1_crgfb")
+metadata/cost = 500.0
+metadata/click_increase = 5.0
+metadata/passive_increase = 0.0
+
+[node name="passive_income_2" type="Button" parent="VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+mouse_filter = 1
+text = "Passive_Income2
++6 Appls per sec
+🍎 1.100"
+script = ExtResource("1_crgfb")
+metadata/cost = 1100.0
+metadata/click_increase = 0.0
+metadata/passive_increase = 6.0
+
+[node name="click_boost_3" type="Button" parent="VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+mouse_filter = 1
+text = "Click_boost3
++100 Apples per click
+🍎 12.000"
+script = ExtResource("1_crgfb")
+metadata/cost = 12000.0
+metadata/click_increase = 100.0
+metadata/passive_increase = 0.0
+
+[node name="passive_income_3" type="Button" parent="VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+mouse_filter = 1
+text = "Passive_Income2
++200 Appls per sec
+🍎 100.000"
+script = ExtResource("1_crgfb")
+metadata/cost = 100000.0
+metadata/click_increase = 0.0
+metadata/passive_increase = 200.0
