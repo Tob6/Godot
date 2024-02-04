@@ -1,14 +1,18 @@
-[gd_scene load_steps=7 format=3 uid="uid://bmmnjucla0dof"]
+[gd_scene load_steps=8 format=3 uid="uid://bmmnjucla0dof"]
 
-[ext_resource type="PackedScene" uid="uid://lb6qd8sh0pvp" path="res://upgrades.tscn" id="1_ncpo6"]
-[ext_resource type="Texture2D" uid="uid://b6y3djdjbn7hw" path="res://Textures/Apple.png" id="2_88trx"]
-[ext_resource type="Script" path="res://clicker.gd" id="3_uemdf"]
-[ext_resource type="Script" path="res://label_passive_income.gd" id="4_1l4jm"]
-[ext_resource type="Script" path="res://label_score.gd" id="5_pet8w"]
-[ext_resource type="Script" path="res://label_click_power.gd" id="6_fu0no"]
+[ext_resource type="PackedScene" uid="uid://lb6qd8sh0pvp" path="res://scenes/upgrades.tscn" id="1_ncpo6"]
+[ext_resource type="PackedScene" uid="uid://bdqfbogc8ndj3" path="res://scenes/ad_player.tscn" id="1_s5qgd"]
+[ext_resource type="Script" path="res://scripts/clicker.gd" id="3_1xjgb"]
+[ext_resource type="Texture2D" uid="uid://b6y3djdjbn7hw" path="res://assets/textures/Apple.png" id="3_p6myx"]
+[ext_resource type="Script" path="res://scripts/label_passive_income.gd" id="4_nlut3"]
+[ext_resource type="Script" path="res://scripts/label_score.gd" id="5_051ki"]
+[ext_resource type="Script" path="res://scripts/label_click_power.gd" id="6_kj3x0"]
 
 [node name="main" type="Node2D"]
 texture_filter = 1
+
+[node name="AdPlayer" parent="." instance=ExtResource("1_s5qgd")]
+position = Vector2(182, 189)
 
 [node name="upgrades" parent="." instance=ExtResource("1_ncpo6")]
 offset_left = 754.0
@@ -23,10 +27,10 @@ offset_left = 343.0
 offset_top = 280.0
 offset_right = 541.0
 offset_bottom = 478.0
-texture_normal = ExtResource("2_88trx")
+texture_normal = ExtResource("3_p6myx")
 stretch_mode = 6
 flip_h = true
-script = ExtResource("3_uemdf")
+script = ExtResource("3_1xjgb")
 
 [node name="label_passive_income" type="Label" parent="."]
 offset_left = 366.0
@@ -37,7 +41,7 @@ scale = Vector2(1.46693, 1.46693)
 text = "🍎 per second"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("4_1l4jm")
+script = ExtResource("4_nlut3")
 
 [node name="label_score" type="Label" parent="."]
 offset_left = 313.0
@@ -48,7 +52,7 @@ scale = Vector2(3.14501, 3.14501)
 text = "xxxx 🍎"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("5_pet8w")
+script = ExtResource("5_051ki")
 
 [node name="label_click_power" type="Label" parent="."]
 offset_left = 865.0
@@ -60,4 +64,4 @@ text = "Click Power
 +XX"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("6_fu0no")
+script = ExtResource("6_kj3x0")

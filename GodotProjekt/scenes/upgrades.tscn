@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://lb6qd8sh0pvp"]
 
-[ext_resource type="Script" path="res://button_upgrade.gd" id="1_crgfb"]
+[ext_resource type="Script" path="res://scripts/button_upgrade.gd" id="1_crgfb"]
 
 [node name="upgrades" type="ScrollContainer"]
 offset_right = 8.0
