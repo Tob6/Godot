@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bmmnjucla0dof"]
+[gd_scene load_steps=8 format=3 uid="uid://d0ssv5dwwdxs2"]
 
 [ext_resource type="PackedScene" uid="uid://lb6qd8sh0pvp" path="res://scenes/upgrades.tscn" id="1_ncpo6"]
 [ext_resource type="Script" path="res://scripts/clicker.gd" id="3_1xjgb"]
@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://scripts/label_passive_income.gd" id="4_nlut3"]
 [ext_resource type="Script" path="res://scripts/label_score.gd" id="5_051ki"]
 [ext_resource type="Script" path="res://scripts/label_click_power.gd" id="6_kj3x0"]
-[ext_resource type="Script" path="res://scripts/AdButton.gd" id="8_y5qqd"]
+[ext_resource type="Script" path="res://scripts/play_ad_button.gd" id="7_470dd"]
 
 [node name="main" type="Node2D"]
 texture_filter = 1
@@ -68,6 +68,6 @@ offset_right = 8.0
 offset_bottom = 8.0
 text = "Play Ad
 "
-script = ExtResource("8_y5qqd")
+script = ExtResource("7_470dd")
 
 [connection signal="button_down" from="AdButton" to="AdButton" method="_on_button_down"]
