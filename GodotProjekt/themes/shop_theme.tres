@@ -21,6 +21,7 @@ corner_radius_bottom_right = 7
 corner_radius_bottom_left = 7
 
 [resource]
+Button/font_sizes/font_size = 31
 Button/styles/focus = SubResource("StyleBoxEmpty_vg1f5")
 Button/styles/hover = SubResource("StyleBoxFlat_ay8be")
 Button/styles/normal = SubResource("StyleBoxFlat_ay8be")

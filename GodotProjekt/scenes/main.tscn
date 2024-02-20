@@ -15,11 +15,10 @@
 texture_filter = 1
 
 [node name="upgrades" parent="." instance=ExtResource("1_ncpo6")]
-offset_left = 754.0
-offset_top = 114.0
-offset_right = 934.0
-offset_bottom = 352.0
-scale = Vector2(2.09442, 2.09442)
+offset_left = 781.0
+offset_top = 101.0
+offset_right = 1131.0
+offset_bottom = 627.0
 
 [node name="clicker" type="TextureButton" parent="."]
 texture_filter = 1
@@ -75,15 +74,16 @@ text = "Play Ad
 script = ExtResource("7_470dd")
 
 [node name="AchievementMenuButton" type="Button" parent="."]
-offset_top = 33.0
-offset_right = 57.0
-offset_bottom = 62.0
+offset_top = 61.0
+offset_right = 213.0
+offset_bottom = 111.0
 theme = ExtResource("7_pn60c")
 text = "Achievements
 "
 script = ExtResource("9_8sggh")
 
 [node name="AchievementMenu" parent="." instance=ExtResource("9_au4c5")]
+visible = false
 offset_left = 164.0
 offset_top = 121.0
 offset_right = 972.0

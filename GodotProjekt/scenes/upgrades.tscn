@@ -1,18 +1,35 @@
-[gd_scene load_steps=3 format=3 uid="uid://lb6qd8sh0pvp"]
+[gd_scene load_steps=4 format=3 uid="uid://lb6qd8sh0pvp"]
 
 [ext_resource type="Theme" uid="uid://x603ykk612g" path="res://themes/shop_theme.tres" id="1_667im"]
 [ext_resource type="Script" path="res://scripts/button_upgrade.gd" id="1_crgfb"]
 
-[node name="upgrades" type="ScrollContainer"]
-offset_right = 173.0
-offset_bottom = 491.0
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r3uil"]
+bg_color = Color(0.0901961, 0.254902, 0.384314, 1)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="Upgrades" type="PanelContainer"]
+offset_right = 330.0
+offset_bottom = 582.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_r3uil")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ScrollCon" type="ScrollContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(330, 0)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ScrollCon"]
 layout_mode = 2
 theme = ExtResource("1_667im")
+theme_override_constants/separation = 9
 
-[node name="click_boost_1" type="Button" parent="VBoxContainer"]
+[node name="click_boost_1" type="Button" parent="MarginContainer/ScrollCon/VBoxContainer"]
 texture_filter = 1
+custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 mouse_filter = 1
 text = "Click_Boost
@@ -23,7 +40,7 @@ metadata/cost = 50.0
 metadata/click_increase = 1.0
 metadata/passive_increase = 0.0
 
-[node name="passive_income_1" type="Button" parent="VBoxContainer"]
+[node name="passive_income_1" type="Button" parent="MarginContainer/ScrollCon/VBoxContainer"]
 texture_filter = 1
 layout_mode = 2
 mouse_filter = 1
@@ -35,7 +52,7 @@ metadata/cost = 125.0
 metadata/click_increase = 0.0
 metadata/passive_increase = 1.0
 
-[node name="click_boost_2" type="Button" parent="VBoxContainer"]
+[node name="click_boost_2" type="Button" parent="MarginContainer/ScrollCon/VBoxContainer"]
 texture_filter = 1
 layout_mode = 2
 mouse_filter = 1
@@ -47,7 +64,7 @@ metadata/cost = 500.0
 metadata/click_increase = 5.0
 metadata/passive_increase = 0.0
 
-[node name="passive_income_2" type="Button" parent="VBoxContainer"]
+[node name="passive_income_2" type="Button" parent="MarginContainer/ScrollCon/VBoxContainer"]
 texture_filter = 1
 layout_mode = 2
 mouse_filter = 1
@@ -59,7 +76,7 @@ metadata/cost = 1100.0
 metadata/click_increase = 0.0
 metadata/passive_increase = 6.0
 
-[node name="click_boost_3" type="Button" parent="VBoxContainer"]
+[node name="click_boost_3" type="Button" parent="MarginContainer/ScrollCon/VBoxContainer"]
 texture_filter = 1
 layout_mode = 2
 mouse_filter = 1
@@ -71,7 +88,7 @@ metadata/cost = 12000.0
 metadata/click_increase = 100.0
 metadata/passive_increase = 0.0
 
-[node name="passive_income_3" type="Button" parent="VBoxContainer"]
+[node name="passive_income_3" type="Button" parent="MarginContainer/ScrollCon/VBoxContainer"]
 texture_filter = 1
 layout_mode = 2
 mouse_filter = 1
