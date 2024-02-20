@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://d0ssv5dwwdxs2"]
+[gd_scene load_steps=11 format=3 uid="uid://d0ssv5dwwdxs2"]
 
 [ext_resource type="PackedScene" uid="uid://lb6qd8sh0pvp" path="res://scenes/upgrades.tscn" id="1_ncpo6"]
 [ext_resource type="Script" path="res://scripts/clicker.gd" id="3_1xjgb"]
@@ -7,6 +7,9 @@
 [ext_resource type="Script" path="res://scripts/label_score.gd" id="5_051ki"]
 [ext_resource type="Script" path="res://scripts/label_click_power.gd" id="6_kj3x0"]
 [ext_resource type="Script" path="res://scripts/play_ad_button.gd" id="7_470dd"]
+[ext_resource type="Theme" uid="uid://x603ykk612g" path="res://themes/shop_theme.tres" id="7_pn60c"]
+[ext_resource type="Script" path="res://scripts/AchievementMenuButton.gd" id="9_8sggh"]
+[ext_resource type="PackedScene" uid="uid://c8pakhajyd2x" path="res://scenes/achievement_menu.tscn" id="9_au4c5"]
 
 [node name="main" type="Node2D"]
 texture_filter = 1
@@ -66,8 +69,25 @@ script = ExtResource("6_kj3x0")
 [node name="AdButton" type="Button" parent="."]
 offset_right = 8.0
 offset_bottom = 8.0
+theme = ExtResource("7_pn60c")
 text = "Play Ad
 "
 script = ExtResource("7_470dd")
 
+[node name="AchievementMenuButton" type="Button" parent="."]
+offset_top = 33.0
+offset_right = 57.0
+offset_bottom = 62.0
+theme = ExtResource("7_pn60c")
+text = "Achievements
+"
+script = ExtResource("9_8sggh")
+
+[node name="AchievementMenu" parent="." instance=ExtResource("9_au4c5")]
+offset_left = 164.0
+offset_top = 121.0
+offset_right = 972.0
+offset_bottom = 542.0
+
 [connection signal="button_down" from="AdButton" to="AdButton" method="_on_button_down"]
+[connection signal="pressed" from="AchievementMenuButton" to="AchievementMenuButton" method="_on_pressed"]
