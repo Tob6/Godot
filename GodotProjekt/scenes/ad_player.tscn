@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://c8kuf7est42lc"]
+
+[ext_resource type="Script" path="res://scripts/ad_player/ad_player.gd" id="1_05eut"]
+[ext_resource type="Texture2D" uid="uid://dmwftnf8hyqhu" path="res://assets/textures/download_ad.png" id="2_g8h5e"]
+[ext_resource type="Script" path="res://scripts/ad_player/download_image.gd" id="2_gf2eu"]
+[ext_resource type="Script" path="res://scripts/ad_player/video_player.gd" id="3_g8tte"]
+
+[node name="AdPlayer" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_05eut")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 1152.0
+offset_bottom = 649.0
+
+[node name="AdDownloadImage" type="Sprite2D" parent="MarginContainer"]
+texture = ExtResource("2_g8h5e")
+script = ExtResource("2_gf2eu")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="MarginContainer"]
+layout_mode = 2
+expand = true
+script = ExtResource("3_g8tte")
+
+[node name="Button" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "X"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
