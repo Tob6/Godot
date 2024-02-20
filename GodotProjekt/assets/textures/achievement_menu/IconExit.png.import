@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfjgsmt583pjt"
-path="res://.godot/imported/Background.png-03a9bac890acc79691df23ed5d625725.ctex"
+uid="uid://f35jnlpvfto3"
+path="res://.godot/imported/IconExit.png-6614b0ab6744c8263428dd2776a3db49.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/achievement_menu/Background.png"
-dest_files=["res://.godot/imported/Background.png-03a9bac890acc79691df23ed5d625725.ctex"]
+source_file="res://assets/textures/achievement_menu/IconExit.png"
+dest_files=["res://.godot/imported/IconExit.png-6614b0ab6744c8263428dd2776a3db49.ctex"]
 
 [params]
 
