@@ -2,21 +2,21 @@
 
 [ext_resource type="PackedScene" uid="uid://xt0xnld0ovfw" path="res://scenes/achievements/time_spent_achievement.tscn" id="1_47lg8"]
 [ext_resource type="Theme" uid="uid://pnya52fbemkh" path="res://themes/achievement_menu_theme.tres" id="1_gt2m5"]
-[ext_resource type="Texture2D" uid="uid://cfjgsmt583pjt" path="res://assets/textures/achievement_menu/Background.png" id="2_bk6r1"]
+[ext_resource type="Texture2D" uid="uid://bl0qerywxuuyn" path="res://assets/textures/achievement_menu/BackgroundWithBorder.png" id="2_k8lku"]
 [ext_resource type="Texture2D" uid="uid://f35jnlpvfto3" path="res://assets/textures/achievement_menu/IconExit.png" id="3_8vn7d"]
 [ext_resource type="Script" path="res://scripts/achievement_menu/exit_button.gd" id="3_65e22"]
-[ext_resource type="PackedScene" uid="uid://ir8j5r6rcahs" path="res://scenes/achievements/achievement2.tscn" id="3_efrlv"]
-[ext_resource type="PackedScene" uid="uid://cytuwro180sc7" path="res://scenes/achievements/achievement3.tscn" id="4_irnce"]
-[ext_resource type="PackedScene" uid="uid://cixuybb2koeva" path="res://scenes/achievements/achievement4.tscn" id="5_1v4rq"]
-[ext_resource type="PackedScene" uid="uid://dqg0jx3add7yd" path="res://scenes/achievements/achievement5.tscn" id="6_k04b0"]
-[ext_resource type="PackedScene" uid="uid://dlchu0ee4qmpk" path="res://scenes/achievements/achievement6.tscn" id="7_x0kp5"]
+[ext_resource type="PackedScene" uid="uid://ir8j5r6rcahs" path="res://scenes/achievements/total_clicks.tscn" id="3_efrlv"]
+[ext_resource type="PackedScene" uid="uid://cytuwro180sc7" path="res://scenes/achievements/money_spent.tscn" id="4_irnce"]
+[ext_resource type="PackedScene" uid="uid://cixuybb2koeva" path="res://scenes/achievements/ads_watched.tscn" id="6_0pnbp"]
+[ext_resource type="PackedScene" uid="uid://dqg0jx3add7yd" path="res://scenes/achievements/rewards_gotten.tscn" id="7_rt5r5"]
+[ext_resource type="PackedScene" uid="uid://dlchu0ee4qmpk" path="res://scenes/achievements/wheels_spun.tscn" id="8_0peii"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1bymm"]
-texture = ExtResource("2_bk6r1")
+texture = ExtResource("2_k8lku")
 
 [node name="AchievementMenu" type="PanelContainer"]
 offset_left = 4.0
-offset_right = 812.0
+offset_right = 980.0
 offset_bottom = 405.0
 theme = ExtResource("1_gt2m5")
 theme_override_styles/panel = SubResource("StyleBoxTexture_1bymm")
@@ -49,17 +49,17 @@ layout_mode = 2
 layout_mode = 2
 theme_override_constants/separation = 18
 
-[node name="TimeSpentAchievement" parent="MarginContainer/achievement_menu/VBoxContainer2" instance=ExtResource("5_1v4rq")]
+[node name="TimeSpentAchievement" parent="MarginContainer/achievement_menu/VBoxContainer2" instance=ExtResource("6_0pnbp")]
 layout_mode = 2
 
-[node name="TimeSpentAchievement2" parent="MarginContainer/achievement_menu/VBoxContainer2" instance=ExtResource("6_k04b0")]
+[node name="TimeSpentAchievement2" parent="MarginContainer/achievement_menu/VBoxContainer2" instance=ExtResource("7_rt5r5")]
 layout_mode = 2
 
-[node name="TimeSpentAchievement3" parent="MarginContainer/achievement_menu/VBoxContainer2" instance=ExtResource("7_x0kp5")]
+[node name="TimeSpentAchievement3" parent="MarginContainer/achievement_menu/VBoxContainer2" instance=ExtResource("8_0peii")]
 layout_mode = 2
 
 [node name="Node2D" type="Node2D" parent="."]
-position = Vector2(930, 9)
+position = Vector2(944, 9)
 
 [node name="TextureButton" type="TextureButton" parent="Node2D"]
 offset_left = -4.0
