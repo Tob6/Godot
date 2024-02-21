@@ -1,18 +1,27 @@
-[gd_scene load_steps=5 format=3 uid="uid://dlchu0ee4qmpk"]
+[gd_scene load_steps=5 format=3 uid="uid://dqg0jx3add7yd"]
 
-[ext_resource type="Theme" uid="uid://pnya52fbemkh" path="res://themes/achievement_menu_theme.tres" id="1_kwie6"]
-[ext_resource type="LabelSettings" uid="uid://tnocghlababb" path="res://themes/achievement_labels.tres" id="2_6s8je"]
-[ext_resource type="Texture2D" uid="uid://cujt71yxxsflo" path="res://assets/textures/achievement_menu/Border6.png" id="3_nxfpj"]
-[ext_resource type="Texture2D" uid="uid://dohvrd4721kgb" path="res://assets/textures/achievement_menu/Icon1.png" id="4_x6lkg"]
+[ext_resource type="Theme" uid="uid://pnya52fbemkh" path="res://themes/achievement_menu_theme.tres" id="1_qrehk"]
+[ext_resource type="LabelSettings" uid="uid://tnocghlababb" path="res://themes/achievement_labels.tres" id="2_nq3ll"]
+[ext_resource type="Texture2D" uid="uid://c1o6255lctiv8" path="res://assets/textures/achievement_menu/Border4.png" id="3_ea1lg"]
+[ext_resource type="Texture2D" uid="uid://dkqlhuplgnq00" path="res://assets/textures/achievement_menu/Icon5.png" id="4_vpgij"]
 
 [node name="TimeSpentAchievement" type="MarginContainer"]
 offset_right = 336.0
 offset_bottom = 95.0
-theme = ExtResource("1_kwie6")
+theme = ExtResource("1_qrehk")
 theme_override_constants/margin_left = 0
 theme_override_constants/margin_top = 0
 theme_override_constants/margin_right = 0
 theme_override_constants/margin_bottom = 0
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_right = 12
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer2"]
+layout_mode = 2
+color = Color(0.533333, 0.533333, 0.533333, 0.262745)
 
 [node name="Panel" type="Panel" parent="."]
 visible = false
@@ -32,9 +41,9 @@ theme_override_constants/separation = 5
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Time Spent in Game
+text = "Rewards gotten
 "
-label_settings = ExtResource("2_6s8je")
+label_settings = ExtResource("2_nq3ll")
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -42,17 +51,18 @@ theme_override_constants/margin_left = 15
 theme_override_constants/margin_right = 15
 
 [node name="ProgressBar" type="ProgressBar" parent="MarginContainer/VBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
-theme = ExtResource("1_kwie6")
+theme = ExtResource("1_qrehk")
 value = 50.0
 rounded = true
 
 [node name="BorderSprite" type="Sprite2D" parent="."]
 position = Vector2(221.031, 51)
 scale = Vector2(3.1875, 3.1875)
-texture = ExtResource("3_nxfpj")
+texture = ExtResource("3_ea1lg")
 
 [node name="Icon" type="Sprite2D" parent="."]
 position = Vector2(52, 50)
 scale = Vector2(2.5, 2.5)
-texture = ExtResource("4_x6lkg")
+texture = ExtResource("4_vpgij")
