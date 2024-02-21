@@ -8,6 +8,10 @@ var passive_income = 1.0;
 
 #func score_increase_arbitrary(amount):
 #	score += amount;
+func _ready():
+	#print(ScoreSave.load())
+	pass
+
 
 func score_increase_active():
 	score += click_power;
