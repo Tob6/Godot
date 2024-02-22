@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://d0ssv5dwwdxs2"]
+[gd_scene load_steps=14 format=3 uid="uid://d0ssv5dwwdxs2"]
 
 [ext_resource type="PackedScene" uid="uid://lb6qd8sh0pvp" path="res://scenes/upgrades.tscn" id="1_ncpo6"]
 [ext_resource type="Script" path="res://scripts/clicker.gd" id="3_1xjgb"]
@@ -10,6 +10,9 @@
 [ext_resource type="Theme" uid="uid://x603ykk612g" path="res://themes/shop_theme.tres" id="7_pn60c"]
 [ext_resource type="Script" path="res://scripts/AchievementMenuButton.gd" id="9_8sggh"]
 [ext_resource type="PackedScene" uid="uid://c8pakhajyd2x" path="res://scenes/achievement_menu.tscn" id="9_au4c5"]
+[ext_resource type="Script" path="res://scenes/test/save.gd" id="11_863vk"]
+[ext_resource type="Script" path="res://scenes/test/load.gd" id="12_8abty"]
+[ext_resource type="Script" path="res://scenes/test/DeleteSave.gd" id="13_xv2w0"]
 
 [node name="main" type="Node2D"]
 texture_filter = 1
@@ -89,5 +92,32 @@ offset_top = 121.0
 offset_right = 972.0
 offset_bottom = 542.0
 
+[node name="Save" type="Button" parent="."]
+offset_left = 10.0
+offset_top = 135.0
+offset_right = 54.0
+offset_bottom = 166.0
+text = "Save"
+script = ExtResource("11_863vk")
+
+[node name="Load" type="Button" parent="."]
+offset_left = 10.0
+offset_top = 188.0
+offset_right = 54.0
+offset_bottom = 219.0
+text = "Load"
+script = ExtResource("12_8abty")
+
+[node name="DeleteSave" type="Button" parent="."]
+offset_left = 10.0
+offset_top = 239.0
+offset_right = 109.0
+offset_bottom = 270.0
+text = "Delete Save"
+script = ExtResource("13_xv2w0")
+
 [connection signal="button_down" from="AdButton" to="AdButton" method="_on_button_down"]
 [connection signal="pressed" from="AchievementMenuButton" to="AchievementMenuButton" method="_on_pressed"]
+[connection signal="pressed" from="Save" to="Save" method="_on_pressed"]
+[connection signal="pressed" from="Load" to="Load" method="_on_pressed"]
+[connection signal="pressed" from="DeleteSave" to="DeleteSave" method="_on_pressed"]

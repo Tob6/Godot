@@ -1,16 +1,15 @@
 extends Node
 
-var score = 100000000.0
+var score = 0
 
 var click_power = 1.0;
-var passive_income = 1.0;
+var passive_income = 0.0;
 
 
 #func score_increase_arbitrary(amount):
 #	score += amount;
 func _ready():
-	#print(ScoreSave.load())
-	pass
+	SaveSystem.load_game()
 
 
 func score_increase_active():
@@ -28,3 +27,4 @@ func increase_click_power(amount):
 
 func _process(delta):
 	score += passive_income * delta;
+	SaveSystem.save_game()

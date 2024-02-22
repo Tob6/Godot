@@ -18,9 +18,9 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-ScoreNode="*res://scripts/score_node.gd"
 NumFormat="*res://scripts/num_format.gd"
-ScoreSave="*res://resources/score.gd"
+ScoreNode="*res://scripts/score_node.gd"
+SaveSystem="*res://resources/save_system.gd"
 
 [display]
 
