@@ -1,18 +1,13 @@
 extends Node
 
-signal total_clicks_sig
-
-var total_clicks = 0
-
-func _ready():
-	pass
-
 func create_save():
+	#var total_clicks = 
 	var save = {
 		"score" = ScoreNode.score,
 		"click_power" = ScoreNode.click_power,
 		"passive_income" = ScoreNode.passive_income,
-		"total_clicks" = total_clicks
+		"total_clicks" = SaveVars.get_total_clicks(),
+		"time_spent" = SaveVars.get_time_spent()
 	}
 	return save
 	
@@ -40,8 +35,7 @@ func load_game():
 		ScoreNode.score = node_data["score"]
 		ScoreNode.passive_income = node_data["passive_income"]
 		ScoreNode.click_power = node_data["click_power"]
-		total_clicks_sig.emit(node_data["total_clicks"])
-		
-		print()
+		SaveVars.set_total_clicks(node_data["total_clicks"])
+		SaveVars.set_time_spent(node_data["time_spent"])
 	
 	savegame.close()

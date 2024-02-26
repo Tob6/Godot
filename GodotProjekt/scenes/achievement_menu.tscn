@@ -38,10 +38,10 @@ theme_override_constants/separation = 16
 layout_mode = 2
 theme_override_constants/separation = 18
 
-[node name="TimeSpentAchievement2" parent="MarginContainer/achievement_menu/VBoxContainer" instance=ExtResource("1_47lg8")]
+[node name="TimeSpentAchievement" parent="MarginContainer/achievement_menu/VBoxContainer" instance=ExtResource("1_47lg8")]
 layout_mode = 2
 
-[node name="TimeSpentAchievement" parent="MarginContainer/achievement_menu/VBoxContainer" instance=ExtResource("3_efrlv")]
+[node name="TotalClicksAchievement" parent="MarginContainer/achievement_menu/VBoxContainer" instance=ExtResource("3_efrlv")]
 layout_mode = 2
 
 [node name="TimeSpentAchievement3" parent="MarginContainer/achievement_menu/VBoxContainer" instance=ExtResource("4_irnce")]
