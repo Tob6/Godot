@@ -1,8 +1,6 @@
 extends MarginContainer
 
-var total_clicks = 0
-func increase_total_clicks():
-	total_clicks+=1
+var total_clicks: float = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var progress_bar: ProgressBar = $MarginContainer/VBoxContainer/MarginContainer/ProgressBar
