@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://ir8j5r6rcahs"]
+[gd_scene load_steps=6 format=3 uid="uid://ir8j5r6rcahs"]
 
 [ext_resource type="Theme" uid="uid://pnya52fbemkh" path="res://themes/achievement_menu_theme.tres" id="1_q5oxp"]
 [ext_resource type="LabelSettings" uid="uid://tnocghlababb" path="res://themes/achievement_labels.tres" id="2_ghrjj"]
+[ext_resource type="Script" path="res://scripts/achievement_menu/achievements/total_clicks.gd" id="2_jape7"]
 [ext_resource type="Texture2D" uid="uid://copro2erigo1l" path="res://assets/textures/achievement_menu/Border3.png" id="3_4ibp4"]
 [ext_resource type="Texture2D" uid="uid://ciubbxvq3o4ss" path="res://assets/textures/achievement_menu/Icon2.png" id="4_up7id"]
 
@@ -13,6 +14,7 @@ theme_override_constants/margin_left = 0
 theme_override_constants/margin_top = 0
 theme_override_constants/margin_right = 0
 theme_override_constants/margin_bottom = 0
+script = ExtResource("2_jape7")
 
 [node name="MarginContainer2" type="MarginContainer" parent="."]
 layout_mode = 2

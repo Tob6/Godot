@@ -18,6 +18,11 @@
 [node name="main" type="Node2D"]
 texture_filter = 1
 
+[node name="AutoSave" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+script = ExtResource("14_84jgs")
+
 [node name="upgrades" parent="." instance=ExtResource("1_ncpo6")]
 offset_left = 781.0
 offset_top = 101.0
@@ -86,13 +91,6 @@ text = "Achievements
 "
 script = ExtResource("9_8sggh")
 
-[node name="AchievementMenu" parent="." instance=ExtResource("9_au4c5")]
-visible = false
-offset_left = 164.0
-offset_top = 121.0
-offset_right = 972.0
-offset_bottom = 542.0
-
 [node name="Save" type="Button" parent="."]
 offset_left = 10.0
 offset_top = 135.0
@@ -117,14 +115,16 @@ offset_bottom = 270.0
 text = "Delete Save"
 script = ExtResource("13_xv2w0")
 
-[node name="AutoSave" type="Timer" parent="."]
-wait_time = 3.0
-autostart = true
-script = ExtResource("14_84jgs")
+[node name="AchievementMenu" parent="." instance=ExtResource("9_au4c5")]
+visible = false
+offset_left = 85.0
+offset_top = 128.0
+offset_right = 1061.0
+offset_bottom = 549.0
 
+[connection signal="timeout" from="AutoSave" to="AutoSave" method="_on_timeout"]
 [connection signal="button_down" from="AdButton" to="AdButton" method="_on_button_down"]
 [connection signal="pressed" from="AchievementMenuButton" to="AchievementMenuButton" method="_on_pressed"]
 [connection signal="pressed" from="Save" to="Save" method="_on_pressed"]
 [connection signal="pressed" from="Load" to="Load" method="_on_pressed"]
 [connection signal="pressed" from="DeleteSave" to="DeleteSave" method="_on_pressed"]
-[connection signal="timeout" from="AutoSave" to="AutoSave" method="_on_timeout"]
