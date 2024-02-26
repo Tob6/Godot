@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://d0ssv5dwwdxs2"]
+[gd_scene load_steps=15 format=3 uid="uid://d0ssv5dwwdxs2"]
 
 [ext_resource type="PackedScene" uid="uid://lb6qd8sh0pvp" path="res://scenes/upgrades.tscn" id="1_ncpo6"]
 [ext_resource type="Script" path="res://scripts/clicker.gd" id="3_1xjgb"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" path="res://scenes/test/save.gd" id="11_863vk"]
 [ext_resource type="Script" path="res://scenes/test/load.gd" id="12_8abty"]
 [ext_resource type="Script" path="res://scenes/test/DeleteSave.gd" id="13_xv2w0"]
+[ext_resource type="Script" path="res://scripts/autosave_timer.gd" id="14_84jgs"]
 
 [node name="main" type="Node2D"]
 texture_filter = 1
@@ -116,8 +117,14 @@ offset_bottom = 270.0
 text = "Delete Save"
 script = ExtResource("13_xv2w0")
 
+[node name="AutoSave" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+script = ExtResource("14_84jgs")
+
 [connection signal="button_down" from="AdButton" to="AdButton" method="_on_button_down"]
 [connection signal="pressed" from="AchievementMenuButton" to="AchievementMenuButton" method="_on_pressed"]
 [connection signal="pressed" from="Save" to="Save" method="_on_pressed"]
 [connection signal="pressed" from="Load" to="Load" method="_on_pressed"]
 [connection signal="pressed" from="DeleteSave" to="DeleteSave" method="_on_pressed"]
+[connection signal="timeout" from="AutoSave" to="AutoSave" method="_on_timeout"]

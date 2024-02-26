@@ -27,4 +27,4 @@ func increase_click_power(amount):
 
 func _process(delta):
 	score += passive_income * delta;
-	SaveSystem.save_game()
+	#SaveSystem.save_game()
