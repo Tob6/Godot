@@ -8,8 +8,6 @@ var passive_income = 0.0;
 
 #func score_increase_arbitrary(amount):
 #	score += amount;
-func _ready():
-	SaveSystem.load_game()
 
 
 func score_increase_active():

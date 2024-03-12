@@ -12,4 +12,3 @@ func _ready():
 func _process(delta):
 	var progress_bar: ProgressBar = $MarginContainer/VBoxContainer/MarginContainer/ProgressBar
 	progress_bar.value = total_clicks
-

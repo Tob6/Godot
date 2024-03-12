@@ -20,8 +20,6 @@ config/icon="res://icon.svg"
 
 NumFormat="*res://scripts/num_format.gd"
 ScoreNode="*res://scripts/score_node.gd"
-SaveSystem="*res://resources/save_system.gd"
-SaveVars="*res://resources/save_vars.gd"
 
 [display]
 
