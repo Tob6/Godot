@@ -1,6 +1,11 @@
 extends Node2D
 
+var main_scene = self;
+var scene_instance;
+
+
 func _ready():
+	Global.main_node_scene = self;
 	load_game()
 
 func create_save():
@@ -42,3 +47,17 @@ func load_game():
 		$AchievementMenu.time_spent = node_data["time_spent"]
 	
 	savegame.close()
+
+
+func unload_scene():
+	if (is_instance_valid(scene_instance)):
+		scene_instance.queue_free();
+	scene_instance = null;
+
+func load_scene(scene_name : String):
+	unload_scene()
+	var scene_path := "res://scenes/%s.tscn" % scene_name
+	var scene_resource := load(scene_path)
+	if(scene_resource):
+		scene_instance = scene_resource.instantiate()
+		main_scene.add_child(scene_instance)

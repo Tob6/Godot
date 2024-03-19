@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://d0ssv5dwwdxs2"]
+[gd_scene load_steps=23 format=3 uid="uid://d0ssv5dwwdxs2"]
 
 [ext_resource type="PackedScene" uid="uid://lb6qd8sh0pvp" path="res://scenes/upgrades.tscn" id="1_ncpo6"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_uuduc"]
@@ -16,23 +16,8 @@
 [ext_resource type="Script" path="res://scenes/test/DeleteSave.gd" id="13_xv2w0"]
 [ext_resource type="Script" path="res://scripts/autosave_timer.gd" id="14_84jgs"]
 [ext_resource type="Script" path="res://scripts/animation_player.gd" id="16_l12ug"]
-
-[sub_resource type="Animation" id="Animation_pokph"]
-resource_name = "idle_apple"
-length = 2.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("clicker:scale")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(1.075, 1.075)]
-}
+[ext_resource type="PackedScene" uid="uid://beqoj5hl3kqvv" path="res://scenes/fortune_wheel.tscn" id="17_qofxq"]
+[ext_resource type="Script" path="res://scenes/button_fortune_wheel.gd" id="18_5rfyy"]
 
 [sub_resource type="Animation" id="Animation_buqdj"]
 length = 0.001
@@ -65,6 +50,23 @@ tracks/0/keys = {
 "values": [Vector2(1, 1), Vector2(0.827, 0.827), Vector2(1, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_pokph"]
+resource_name = "idle_apple"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("clicker:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.075, 1.075)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6e63j"]
 _data = {
 "RESET": SubResource("Animation_buqdj"),
@@ -72,22 +74,24 @@ _data = {
 "idle_apple": SubResource("Animation_pokph")
 }
 
-[node name="main" type="Node2D"]
+[node name="game" type="Node2D"]
+
+[node name="main" type="Node2D" parent="."]
 texture_filter = 1
 script = ExtResource("1_uuduc")
 
-[node name="AutoSave" type="Timer" parent="."]
+[node name="AutoSave" type="Timer" parent="main"]
 wait_time = 3.0
 autostart = true
 script = ExtResource("14_84jgs")
 
-[node name="upgrades" parent="." instance=ExtResource("1_ncpo6")]
+[node name="upgrades" parent="main" instance=ExtResource("1_ncpo6")]
 offset_left = 781.0
 offset_top = 101.0
 offset_right = 1131.0
 offset_bottom = 627.0
 
-[node name="clicker" type="TextureButton" parent="."]
+[node name="clicker" type="TextureButton" parent="main"]
 texture_filter = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -110,7 +114,7 @@ flip_h = true
 script = ExtResource("3_1xjgb")
 metadata/_edit_use_anchors_ = true
 
-[node name="label_passive_income" type="Label" parent="."]
+[node name="label_passive_income" type="Label" parent="main"]
 offset_left = 366.0
 offset_top = 207.0
 offset_right = 472.0
@@ -121,7 +125,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("4_nlut3")
 
-[node name="label_score" type="Label" parent="."]
+[node name="label_score" type="Label" parent="main"]
 offset_left = 313.0
 offset_top = 136.0
 offset_right = 397.0
@@ -132,7 +136,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("5_051ki")
 
-[node name="label_click_power" type="Label" parent="."]
+[node name="label_click_power" type="Label" parent="main"]
 offset_left = 865.0
 offset_top = 10.0
 offset_right = 955.0
@@ -144,15 +148,15 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("6_kj3x0")
 
-[node name="AdButton" type="Button" parent="."]
-offset_right = 8.0
-offset_bottom = 8.0
+[node name="AdButton" type="Button" parent="main"]
+offset_right = 111.0
+offset_bottom = 50.0
 theme = ExtResource("7_pn60c")
 text = "Play Ad
 "
 script = ExtResource("7_470dd")
 
-[node name="AchievementMenuButton" type="Button" parent="."]
+[node name="AchievementMenuButton" type="Button" parent="main"]
 offset_top = 61.0
 offset_right = 213.0
 offset_bottom = 111.0
@@ -161,7 +165,7 @@ text = "Achievements
 "
 script = ExtResource("9_8sggh")
 
-[node name="Save" type="Button" parent="."]
+[node name="Save" type="Button" parent="main"]
 offset_left = 10.0
 offset_top = 135.0
 offset_right = 54.0
@@ -169,15 +173,15 @@ offset_bottom = 166.0
 text = "Save"
 script = ExtResource("11_863vk")
 
-[node name="Load" type="Button" parent="."]
+[node name="Load" type="Button" parent="main"]
 offset_left = 10.0
 offset_top = 188.0
-offset_right = 54.0
+offset_right = 56.0
 offset_bottom = 219.0
 text = "Load"
 script = ExtResource("12_8abty")
 
-[node name="DeleteSave" type="Button" parent="."]
+[node name="DeleteSave" type="Button" parent="main"]
 offset_left = 10.0
 offset_top = 239.0
 offset_right = 109.0
@@ -185,22 +189,37 @@ offset_bottom = 270.0
 text = "Delete Save"
 script = ExtResource("13_xv2w0")
 
-[node name="AchievementMenu" parent="." instance=ExtResource("9_au4c5")]
+[node name="AchievementMenu" parent="main" instance=ExtResource("9_au4c5")]
 visible = false
 offset_left = 85.0
 offset_top = 128.0
 offset_right = 1061.0
 offset_bottom = 549.0
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="main"]
 libraries = {
 "": SubResource("AnimationLibrary_6e63j")
 }
 script = ExtResource("16_l12ug")
 
-[connection signal="timeout" from="AutoSave" to="AutoSave" method="_on_timeout"]
-[connection signal="button_down" from="AdButton" to="AdButton" method="_on_button_down"]
-[connection signal="pressed" from="AchievementMenuButton" to="AchievementMenuButton" method="_on_pressed"]
-[connection signal="pressed" from="Save" to="Save" method="_on_pressed"]
-[connection signal="pressed" from="Load" to="Load" method="_on_pressed"]
-[connection signal="pressed" from="DeleteSave" to="DeleteSave" method="_on_pressed"]
+[node name="button_fortune_wheel" type="Button" parent="main"]
+offset_left = 153.0
+offset_top = 4.0
+offset_right = 409.0
+offset_bottom = 54.0
+theme = ExtResource("7_pn60c")
+text = "Wheel o' Fortune"
+script = ExtResource("18_5rfyy")
+
+[node name="fortune_wheel" parent="." instance=ExtResource("17_qofxq")]
+visible = false
+position = Vector2(143, 469)
+scale = Vector2(0.5, 0.5)
+
+[connection signal="timeout" from="main/AutoSave" to="main/AutoSave" method="_on_timeout"]
+[connection signal="button_down" from="main/AdButton" to="main/AdButton" method="_on_button_down"]
+[connection signal="pressed" from="main/AchievementMenuButton" to="main/AchievementMenuButton" method="_on_pressed"]
+[connection signal="pressed" from="main/Save" to="main/Save" method="_on_pressed"]
+[connection signal="pressed" from="main/Load" to="main/Load" method="_on_pressed"]
+[connection signal="pressed" from="main/DeleteSave" to="main/DeleteSave" method="_on_pressed"]
+[connection signal="button_down" from="main/button_fortune_wheel" to="main/button_fortune_wheel" method="_on_button_down"]
