@@ -7,10 +7,10 @@ var rotation_speed = 0;
 
 var reference_position = Vector2(0,0);
 
-func _process(delta):
+func _process(_delta):
 	selected = false;
 
-func _on_area_2d_input_event(viewport, event, shape_idx):
+func _on_area_2d_input_event():
 	if Input.is_action_just_pressed("Klick"):
 		reference_position = get_global_mouse_position();
 	if Input.is_action_pressed("Klick"):
