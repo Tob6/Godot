@@ -1,0 +1,46 @@
+[gd_scene load_steps=9 format=3 uid="uid://beqoj5hl3kqvv"]
+
+[ext_resource type="Script" path="res://fortune_wheel.gd" id="1_04l56"]
+[ext_resource type="Texture2D" uid="uid://bc5e5d1q8c7rn" path="res://assets/textures/wheel.png" id="2_4t7ad"]
+[ext_resource type="Script" path="res://wheel.gd" id="3_dkvqw"]
+[ext_resource type="Texture2D" uid="uid://3qn6yd3gdbkt" path="res://assets/textures/Diamond.png" id="4_322kn"]
+[ext_resource type="Texture2D" uid="uid://d3h6mpv78bvhu" path="res://assets/textures/wheel_arrow.png" id="4_meem1"]
+[ext_resource type="Texture2D" uid="uid://cr2npb8v5wmho" path="res://assets/textures/Gold.png" id="5_t2rs6"]
+[ext_resource type="Texture2D" uid="uid://b6y3djdjbn7hw" path="res://assets/textures/Apple.png" id="6_27qpg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fwfnb"]
+size = Vector2(315, 491)
+
+[node name="tipico" type="Node2D"]
+
+[node name="fortune_wheel" type="Node2D" parent="."]
+position = Vector2(370, 325)
+script = ExtResource("1_04l56")
+
+[node name="Area2D" type="Area2D" parent="fortune_wheel"]
+
+[node name="wheel" type="Sprite2D" parent="fortune_wheel/Area2D"]
+texture = ExtResource("2_4t7ad")
+script = ExtResource("3_dkvqw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fortune_wheel/Area2D"]
+position = Vector2(97.5, 2.5)
+shape = SubResource("RectangleShape2D_fwfnb")
+
+[node name="diamond" type="Sprite2D" parent="fortune_wheel"]
+position = Vector2(121, -40)
+texture = ExtResource("4_322kn")
+
+[node name="gold" type="Sprite2D" parent="fortune_wheel"]
+position = Vector2(-167, 68)
+texture = ExtResource("5_t2rs6")
+
+[node name="apple" type="Sprite2D" parent="fortune_wheel"]
+position = Vector2(-153, -59)
+texture = ExtResource("6_27qpg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(646, 348)
+texture = ExtResource("4_meem1")
+
+[connection signal="input_event" from="fortune_wheel/Area2D" to="fortune_wheel" method="_on_area_2d_input_event"]
