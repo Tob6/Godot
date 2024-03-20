@@ -15,7 +15,7 @@
 [ext_resource type="Script" path="res://scenes/test/DeleteSave.gd" id="13_ykcw4"]
 [ext_resource type="PackedScene" uid="uid://c8pakhajyd2x" path="res://scenes/achievement_menu.tscn" id="14_lorps"]
 [ext_resource type="Script" path="res://scripts/animation_player.gd" id="15_gqn5f"]
-[ext_resource type="Script" path="res://scenes/button_fortune_wheel.gd" id="16_skx5e"]
+[ext_resource type="Script" path="res://button_fortune_wheel.gd" id="16_skx5e"]
 
 [sub_resource type="Animation" id="Animation_buqdj"]
 length = 0.001

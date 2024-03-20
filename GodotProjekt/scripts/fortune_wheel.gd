@@ -7,10 +7,10 @@ var rotation_speed = 0;
 
 var reference_position = Vector2(0,0);
 
-func _process(delta):
+func _process(_delta):
 	selected = false;
 
-func _on_area_2d_input_event(viewport, event, shape_idx):
+func _on_area_2d_input_event():
 	if Input.is_action_just_pressed("Klick"):
 		reference_position = get_global_mouse_position();
 	if Input.is_action_pressed("Klick"):
@@ -22,7 +22,6 @@ func _on_area_2d_input_event(viewport, event, shape_idx):
 		var y_comp_ref = (reference_position.y-global_position.y);
 		
 		rotation_direction = (y_comp_curr/x_comp_curr - y_comp_ref/x_comp_ref);
-		#rotation_speed = 1;
 		
 	if Input.is_action_just_released("Klick"):
 		rotation_speed = 100;
@@ -31,9 +30,9 @@ func _physics_process(delta):
 	
 	rotation += rotation_speed * rotation_direction * delta
 	
-	reduce_speed();
+	reduce_rotation();
 
-func reduce_speed():
+func reduce_rotation():
 	if(rotation_speed > 10):
 		rotation_speed -= 0.125;
 		return;
