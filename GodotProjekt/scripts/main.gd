@@ -15,7 +15,9 @@ func create_save():
 		"click_power" = ScoreNode.click_power,
 		"passive_income" = ScoreNode.passive_income,
 		"total_clicks" = $AchievementMenu.total_clicks,
-		"time_spent" = $AchievementMenu.time_spent
+		"time_spent" = $AchievementMenu.time_spent,
+		"click_upgrade_mult" = ScoreNode.click_upgrade_mult,
+		"passive_upgrade_mult" = ScoreNode.passive_upgrade_mult
 	}
 	return save
 	
@@ -45,6 +47,8 @@ func load_game():
 		ScoreNode.click_power = node_data["click_power"]
 		$AchievementMenu.total_clicks = node_data["total_clicks"]
 		$AchievementMenu.time_spent = node_data["time_spent"]
+		ScoreNode.click_upgrade_mult = node_data["click_upgrade_mult"]
+		ScoreNode.passive_upgrade_mult = node_data["passive_upgrade_mult"]
 	
 	savegame.close()
 
