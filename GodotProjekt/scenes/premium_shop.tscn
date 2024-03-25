@@ -1,6 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://c8ok27rd1r3fs"]
+[gd_scene load_steps=5 format=3 uid="uid://c8ok27rd1r3fs"]
 
 [ext_resource type="Texture2D" uid="uid://r7787nmxcl2m" path="res://assets/textures/premium_shop/BackgroundD.png" id="1_xaeif"]
+[ext_resource type="Texture2D" uid="uid://mt116s3slbjr" path="res://assets/textures/premium_shop/diamond_display.png" id="2_buwb4"]
+[ext_resource type="Texture2D" uid="uid://mq51xa7ldygo" path="res://assets/textures/premium_shop/money_display.png" id="3_4huol"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_lqhpq"]
+font_size = 26
+font_color = Color(0, 0, 0, 1)
+outline_size = 6
 
 [node name="PremiumShop" type="Control"]
 layout_mode = 3
@@ -15,3 +22,39 @@ layout_mode = 0
 offset_right = 953.0
 offset_bottom = 533.0
 texture = ExtResource("1_xaeif")
+metadata/_edit_lock_ = true
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(87, 42)
+scale = Vector2(1.24, 1.24)
+
+[node name="DiamondDisplay" type="Node2D" parent="Node2D"]
+position = Vector2(116, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/DiamondDisplay"]
+texture = ExtResource("2_buwb4")
+
+[node name="Label" type="Label" parent="Node2D/DiamondDisplay"]
+offset_left = -53.0
+offset_top = -18.0
+offset_right = 52.0
+offset_bottom = 24.0
+text = "1000"
+label_settings = SubResource("LabelSettings_lqhpq")
+horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="MoneyDisplay" type="Node2D" parent="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/MoneyDisplay"]
+texture = ExtResource("3_4huol")
+
+[node name="Label" type="Label" parent="Node2D/MoneyDisplay"]
+offset_left = -53.0
+offset_top = -18.0
+offset_right = 52.0
+offset_bottom = 24.0
+text = "1000"
+label_settings = SubResource("LabelSettings_lqhpq")
+horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true
