@@ -2,10 +2,10 @@ extends Button
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	if(get_meta("click_increase > 0")):
+	if(get_meta("click_increase") > 0):
 		set_text("%.0f 🍎" % (get_meta("cost") * ScoreNode.get_click_upgrades_mult()));
 	else:
-		if(get_meta("passive_increase > 0")):
+		if(get_meta("passive_increase") > 0):
 			set_text("%.0f 🍎" % (get_meta("cost") * ScoreNode.get_passive_upgrades_mult()));
 		else:
 			set_text("Error: ScoreNode Script not loaded yet");
