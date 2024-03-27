@@ -2,10 +2,10 @@ extends Button
 
 func _process(delta): # Updates Prices
 	if(get_meta("click_increase") > 0):
-		set_text("%.0f 🍎" % (get_meta("cost") * ScoreNode.get_click_upgrades_mult()));
+		set_text(NumSuffix.number_with_suffix(get_meta("cost") * ScoreNode.get_click_upgrades_mult(), 1) + " 🍎" );
 	else:
 		if(get_meta("passive_increase") > 0):
-			set_text("%.0f 🍎" % (get_meta("cost") * ScoreNode.get_passive_upgrades_mult()));
+			set_text(NumSuffix.number_with_suffix(get_meta("cost") * ScoreNode.get_passive_upgrades_mult()) +" 🍎");
 		else:
 			set_text("Error: Cannot calculate price");
 

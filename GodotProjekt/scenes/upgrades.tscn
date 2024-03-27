@@ -20,7 +20,7 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_r3uil")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-custom_minimum_size = Vector2(400, 0)
+custom_minimum_size = Vector2(470, 0)
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
@@ -50,7 +50,7 @@ Doubles Click Power"
 
 [node name="click_boost" type="Button" parent="MarginContainer/ScrollCon/VBoxContainer/HBoxContainer"]
 texture_filter = 1
-custom_minimum_size = Vector2(110, 80)
+custom_minimum_size = Vector2(160, 80)
 layout_mode = 2
 mouse_filter = 1
 text = "temp"
@@ -81,7 +81,7 @@ text = "Picnic Basket
 
 [node name="passive_income_1" type="Button" parent="MarginContainer/ScrollCon/VBoxContainer/HBoxContainer2"]
 texture_filter = 1
-custom_minimum_size = Vector2(110, 80)
+custom_minimum_size = Vector2(160, 80)
 layout_mode = 2
 mouse_filter = 1
 text = "temp"
@@ -107,7 +107,7 @@ text = "Collection Cart
 
 [node name="passive_income_2" type="Button" parent="MarginContainer/ScrollCon/VBoxContainer/HBoxContainer3"]
 texture_filter = 1
-custom_minimum_size = Vector2(110, 80)
+custom_minimum_size = Vector2(160, 80)
 layout_mode = 2
 mouse_filter = 1
 text = "temp"
@@ -133,7 +133,7 @@ text = "Helping Hand
 
 [node name="passive_income_3" type="Button" parent="MarginContainer/ScrollCon/VBoxContainer/HBoxContainer4"]
 texture_filter = 1
-custom_minimum_size = Vector2(110, 80)
+custom_minimum_size = Vector2(160, 80)
 layout_mode = 2
 mouse_filter = 1
 text = "temp"
@@ -159,7 +159,7 @@ text = "Genetic Modification
 
 [node name="passive_income_3" type="Button" parent="MarginContainer/ScrollCon/VBoxContainer/HBoxContainer5"]
 texture_filter = 1
-custom_minimum_size = Vector2(110, 80)
+custom_minimum_size = Vector2(160, 80)
 layout_mode = 2
 mouse_filter = 1
 text = "temp"
@@ -185,7 +185,7 @@ text = "Appetite for Apples
 
 [node name="passive_income_3" type="Button" parent="MarginContainer/ScrollCon/VBoxContainer/HBoxContainer6"]
 texture_filter = 1
-custom_minimum_size = Vector2(110, 80)
+custom_minimum_size = Vector2(160, 80)
 layout_mode = 2
 mouse_filter = 1
 text = "temp"
