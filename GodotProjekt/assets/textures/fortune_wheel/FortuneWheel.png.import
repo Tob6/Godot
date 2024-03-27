@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3h6mpv78bvhu"
-path="res://.godot/imported/wheel_arrow.png-b2d847b0a4b0ccc87bbf4fba31fc34d1.ctex"
+uid="uid://cdj44is4si2xf"
+path="res://.godot/imported/FortuneWheel.png-59e42f4e3eb86ac385fbbc7694380cd6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/wheel_arrow.png"
-dest_files=["res://.godot/imported/wheel_arrow.png-b2d847b0a4b0ccc87bbf4fba31fc34d1.ctex"]
+source_file="res://assets/textures/fortune_wheel/FortuneWheel.png"
+dest_files=["res://.godot/imported/FortuneWheel.png-59e42f4e3eb86ac385fbbc7694380cd6.ctex"]
 
 [params]
 

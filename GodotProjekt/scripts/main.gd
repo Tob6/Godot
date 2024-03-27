@@ -3,7 +3,6 @@ extends Node2D
 var main_scene = self;
 var scene_instance;
 
-
 func _ready():
 	Global.main_node_scene = self;
 	load_game()
@@ -51,7 +50,6 @@ func load_game():
 		ScoreNode.passive_upgrade_mult = node_data["passive_upgrade_mult"]
 	
 	savegame.close()
-
 
 func unload_scene():
 	if (is_instance_valid(scene_instance)):

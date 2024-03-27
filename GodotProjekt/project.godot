@@ -20,7 +20,8 @@ config/icon="res://icon.svg"
 
 NumFormat="*res://scripts/num_format.gd"
 ScoreNode="*res://scripts/score_node.gd"
-Global="*res://scripts/Global.gd"
+Global="*res://scripts/global.gd"
+NumSuffix="*res://scripts/num_suffix_formatting.gd"
 
 [display]
 

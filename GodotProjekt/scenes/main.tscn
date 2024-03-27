@@ -17,10 +17,8 @@
 [ext_resource type="Script" path="res://scenes/test/DeleteSave.gd" id="13_xv2w0"]
 [ext_resource type="Script" path="res://scripts/autosave_timer.gd" id="14_84jgs"]
 [ext_resource type="Script" path="res://scripts/animation_player.gd" id="16_l12ug"]
-[ext_resource type="Texture2D" uid="uid://bn42xlhs80y0u" path="res://assets/textures/PremiumShopIcon (1).png" id="17_dgwer"]
 [ext_resource type="PackedScene" uid="uid://beqoj5hl3kqvv" path="res://scenes/fortune_wheel.tscn" id="17_qofxq"]
 [ext_resource type="Script" path="res://scenes/button_fortune_wheel.gd" id="18_5rfyy"]
-[ext_resource type="Texture2D" uid="uid://bwwbjpuwfvx2c" path="res://assets/textures/AchievementMenuIcon.png" id="20_riw2c"]
 
 [sub_resource type="Animation" id="Animation_buqdj"]
 length = 0.001
@@ -234,11 +232,6 @@ offset_bottom = 1066.0
 theme = ExtResource("7_pn60c")
 text = "Wheel o' Fortune"
 script = ExtResource("18_5rfyy")
-
-[node name="fortune_wheel" parent="." instance=ExtResource("17_qofxq")]
-visible = false
-position = Vector2(143, 469)
-scale = Vector2(0.5, 0.5)
 
 [connection signal="timeout" from="main/AutoSave" to="main/AutoSave" method="_on_timeout"]
 [connection signal="button_down" from="main/AdButton" to="main/AdButton" method="_on_button_down"]
