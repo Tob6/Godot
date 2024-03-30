@@ -16,7 +16,7 @@
 [ext_resource type="Script" path="res://scenes/test/DeleteSave.gd" id="13_xv2w0"]
 [ext_resource type="Script" path="res://scripts/autosave_timer.gd" id="14_84jgs"]
 [ext_resource type="Script" path="res://scripts/animation_player.gd" id="16_l12ug"]
-[ext_resource type="Script" path="res://button_fortune_wheel.gd" id="18_5rfyy"]
+[ext_resource type="Script" path="res://scenes/button_fortune_wheel.gd" id="18_5rfyy"]
 
 [sub_resource type="Animation" id="Animation_buqdj"]
 length = 0.001
