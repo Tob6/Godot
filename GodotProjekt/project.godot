@@ -25,6 +25,8 @@ NumSuffix="*res://scripts/num_suffix_formatting.gd"
 
 [display]
 
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 
