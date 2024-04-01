@@ -211,11 +211,11 @@ theme = ExtResource("7_pn60c")
 text = "Wheel o' Fortune"
 script = ExtResource("18_5rfyy")
 
-[node name="Settings" parent="." instance=ExtResource("18_7jhiu")]
-offset_left = 108.0
-offset_top = 418.0
-offset_right = 108.0
-offset_bottom = 418.0
+[node name="Settings" parent="main" instance=ExtResource("18_7jhiu")]
+offset_left = 28.0
+offset_top = 778.0
+offset_right = 28.0
+offset_bottom = 778.0
 
 [connection signal="timeout" from="main/AutoSave" to="main/AutoSave" method="_on_timeout"]
 [connection signal="button_down" from="main/AdButton" to="main/AdButton" method="_on_button_down"]
