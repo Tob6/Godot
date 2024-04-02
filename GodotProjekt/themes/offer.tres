@@ -1,0 +1,67 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://clsxu0gwjbjhx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ltl0v"]
+bg_color = Color(0.447059, 0.556863, 0.968627, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.301961, 0.403922, 0.917647, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n5w5g"]
+bg_color = Color(0.447059, 0.556863, 0.968627, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.301961, 0.403922, 0.917647, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_18cuu"]
+bg_color = Color(0.301961, 0.403922, 0.917647, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.301961, 0.403922, 0.917647, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_667mf"]
+bg_color = Color(0.980392, 0.878431, 0.752941, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.447059, 0.556863, 0.968627, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+expand_margin_left = 7.0
+expand_margin_top = 7.0
+expand_margin_right = 7.0
+anti_aliasing = false
+
+[resource]
+Button/font_sizes/font_size = 36
+Button/styles/hover = SubResource("StyleBoxFlat_ltl0v")
+Button/styles/normal = SubResource("StyleBoxFlat_n5w5g")
+Button/styles/pressed = SubResource("StyleBoxFlat_18cuu")
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/constants/outline_size = 15
+Label/font_sizes/font_size = 60
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_667mf")
