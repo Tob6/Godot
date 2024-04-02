@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://lb6qd8sh0pvp"]
+[gd_scene load_steps=13 format=3 uid="uid://lb6qd8sh0pvp"]
 
 [ext_resource type="Theme" uid="uid://x603ykk612g" path="res://themes/shop_theme.tres" id="1_667im"]
 [ext_resource type="Script" path="res://scripts/button_upgrade.gd" id="1_crgfb"]
@@ -8,15 +8,20 @@
 [ext_resource type="Texture2D" uid="uid://b866jv50bs60y" path="res://assets/textures/upgrades/Andy.png" id="6_ei4em"]
 [ext_resource type="Texture2D" uid="uid://bdn2av56pbjtp" path="res://assets/textures/upgrades/DNA.png" id="7_bxs8e"]
 [ext_resource type="Texture2D" uid="uid://bjdnenux7qcpl" path="res://assets/textures/upgrades/Welt.png" id="8_vovga"]
+[ext_resource type="Texture2D" uid="uid://cdgy3rs1xpdbu" path="res://assets/textures/upgrades/Atom.png" id="9_7tli6"]
+[ext_resource type="Texture2D" uid="uid://bv4c2wavyvpn7" path="res://assets/textures/upgrades/Iluminati.png" id="10_hqrm6"]
+[ext_resource type="Texture2D" uid="uid://bhlqm3yqdiegs" path="res://assets/textures/upgrades/Yin Yang.png" id="11_7vlp6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r3uil"]
-bg_color = Color(0.0901961, 0.254902, 0.384314, 1)
+bg_color = Color(0.192157, 0.2, 0.219608, 1)
 
 [node name="Upgrades" type="PanelContainer"]
 anchors_preset = 9
 anchor_bottom = 1.0
-offset_right = 350.0
+offset_right = 470.0
+offset_bottom = -267.0
 grow_vertical = 2
+scale = Vector2(1.155, 1.155)
 theme_override_styles/panel = SubResource("StyleBoxFlat_r3uil")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
@@ -55,9 +60,10 @@ layout_mode = 2
 mouse_filter = 1
 text = "temp"
 script = ExtResource("1_crgfb")
-metadata/cost = 10.0
+metadata/cost = 50.0
 metadata/click_increase = 1.0
 metadata/passive_increase = 0.0
+metadata/Type = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="MarginContainer/ScrollCon/VBoxContainer/HBoxContainer"]
 position = Vector2(-47, 37)
@@ -86,9 +92,10 @@ layout_mode = 2
 mouse_filter = 1
 text = "temp"
 script = ExtResource("1_crgfb")
-metadata/cost = 125.0
+metadata/cost = 100.0
 metadata/click_increase = 0.0
 metadata/passive_increase = 1.0
+metadata/Type = 1
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/ScrollCon/VBoxContainer"]
 layout_mode = 2
@@ -112,9 +119,10 @@ layout_mode = 2
 mouse_filter = 1
 text = "temp"
 script = ExtResource("1_crgfb")
-metadata/cost = 1100.0
+metadata/cost = 1000.0
 metadata/click_increase = 0.0
 metadata/passive_increase = 5.0
+metadata/Type = 2
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/ScrollCon/VBoxContainer"]
 layout_mode = 2
@@ -138,9 +146,10 @@ layout_mode = 2
 mouse_filter = 1
 text = "temp"
 script = ExtResource("1_crgfb")
-metadata/cost = 100000.0
+metadata/cost = 5000.0
 metadata/click_increase = 0.0
 metadata/passive_increase = 20.0
+metadata/Type = 3
 
 [node name="HBoxContainer5" type="HBoxContainer" parent="MarginContainer/ScrollCon/VBoxContainer"]
 layout_mode = 2
@@ -164,9 +173,10 @@ layout_mode = 2
 mouse_filter = 1
 text = "temp"
 script = ExtResource("1_crgfb")
-metadata/cost = 100000.0
+metadata/cost = 30000.0
 metadata/click_increase = 0.0
 metadata/passive_increase = 100.0
+metadata/Type = 4
 
 [node name="HBoxContainer6" type="HBoxContainer" parent="MarginContainer/ScrollCon/VBoxContainer"]
 layout_mode = 2
@@ -190,6 +200,88 @@ layout_mode = 2
 mouse_filter = 1
 text = "temp"
 script = ExtResource("1_crgfb")
-metadata/cost = 100000.0
+metadata/cost = 200000.0
 metadata/click_increase = 0.0
 metadata/passive_increase = 500.0
+metadata/Type = 5
+
+[node name="HBoxContainer7" type="HBoxContainer" parent="MarginContainer/ScrollCon/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="Welt" type="Sprite2D" parent="MarginContainer/ScrollCon/VBoxContainer/HBoxContainer7"]
+position = Vector2(-46, 34)
+scale = Vector2(1.78125, 1.78125)
+texture = ExtResource("9_7tli6")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/ScrollCon/VBoxContainer/HBoxContainer7"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Indivisible Apples
++1k Apples per Second"
+
+[node name="passive_income_3" type="Button" parent="MarginContainer/ScrollCon/VBoxContainer/HBoxContainer7"]
+texture_filter = 1
+custom_minimum_size = Vector2(160, 80)
+layout_mode = 2
+mouse_filter = 1
+text = "temp"
+script = ExtResource("1_crgfb")
+metadata/cost = 500000.0
+metadata/click_increase = 0.0
+metadata/passive_increase = 1000.0
+metadata/Type = 6
+
+[node name="HBoxContainer8" type="HBoxContainer" parent="MarginContainer/ScrollCon/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="Welt" type="Sprite2D" parent="MarginContainer/ScrollCon/VBoxContainer/HBoxContainer8"]
+position = Vector2(-46, 34)
+scale = Vector2(1.78125, 1.78125)
+texture = ExtResource("10_hqrm6")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/ScrollCon/VBoxContainer/HBoxContainer8"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Apple Conspiracy
++5k Apples per Second"
+
+[node name="passive_income_3" type="Button" parent="MarginContainer/ScrollCon/VBoxContainer/HBoxContainer8"]
+texture_filter = 1
+custom_minimum_size = Vector2(160, 80)
+layout_mode = 2
+mouse_filter = 1
+text = "temp"
+script = ExtResource("1_crgfb")
+metadata/cost = 3e+06
+metadata/click_increase = 0.0
+metadata/passive_increase = 5000.0
+metadata/Type = 7
+
+[node name="HBoxContainer9" type="HBoxContainer" parent="MarginContainer/ScrollCon/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="Welt" type="Sprite2D" parent="MarginContainer/ScrollCon/VBoxContainer/HBoxContainer9"]
+position = Vector2(-46, 34)
+scale = Vector2(1.78125, 1.78125)
+texture = ExtResource("11_7vlp6")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/ScrollCon/VBoxContainer/HBoxContainer9"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Apple Equilibrium
++10k Apples per Second"
+
+[node name="passive_income_3" type="Button" parent="MarginContainer/ScrollCon/VBoxContainer/HBoxContainer9"]
+texture_filter = 1
+custom_minimum_size = Vector2(160, 80)
+layout_mode = 2
+mouse_filter = 1
+text = "temp"
+script = ExtResource("1_crgfb")
+metadata/cost = 7.5e+06
+metadata/click_increase = 0.0
+metadata/passive_increase = 10000.0
+metadata/Type = 8

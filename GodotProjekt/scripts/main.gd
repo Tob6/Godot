@@ -16,7 +16,14 @@ func create_save():
 		"total_clicks" = $AchievementMenu.total_clicks,
 		"time_spent" = $AchievementMenu.time_spent,
 		"click_upgrade_mult" = ScoreNode.click_upgrade_mult,
-		"passive_upgrade_mult" = ScoreNode.passive_upgrade_mult
+		"passive1_upgrade_mult" = ScoreNode.passive1_upgrade_mult,
+		"passive2_upgrade_mult" = ScoreNode.passive2_upgrade_mult,
+		"passive3_upgrade_mult" = ScoreNode.passive3_upgrade_mult,
+		"passive4_upgrade_mult" = ScoreNode.passive4_upgrade_mult,
+		"passive5_upgrade_mult" = ScoreNode.passive5_upgrade_mult,
+		"passive6_upgrade_mult" = ScoreNode.passive6_upgrade_mult,
+		"passive7_upgrade_mult" = ScoreNode.passive7_upgrade_mult,
+		"passive8_upgrade_mult" = ScoreNode.passive8_upgrade_mult
 	}
 	return save
 	
@@ -47,7 +54,14 @@ func load_game():
 		$AchievementMenu.total_clicks = node_data["total_clicks"]
 		$AchievementMenu.time_spent = node_data["time_spent"]
 		ScoreNode.click_upgrade_mult = node_data["click_upgrade_mult"]
-		ScoreNode.passive_upgrade_mult = node_data["passive_upgrade_mult"]
+		ScoreNode.passive1_upgrade_mult = node_data["passive1_upgrade_mult"]
+		ScoreNode.passive2_upgrade_mult = node_data["passive2_upgrade_mult"]
+		ScoreNode.passive3_upgrade_mult = node_data["passive3_upgrade_mult"]
+		ScoreNode.passive4_upgrade_mult = node_data["passive4_upgrade_mult"]
+		ScoreNode.passive5_upgrade_mult = node_data["passive5_upgrade_mult"]
+		ScoreNode.passive6_upgrade_mult = node_data["passive6_upgrade_mult"]
+		ScoreNode.passive7_upgrade_mult = node_data["passive7_upgrade_mult"]
+		ScoreNode.passive8_upgrade_mult = node_data["passive8_upgrade_mult"]
 	
 	savegame.close()
 
