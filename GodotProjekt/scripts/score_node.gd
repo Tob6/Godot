@@ -10,8 +10,8 @@ var passive_income = 0.0;
 #	score += amount;
 
 
-func score_increase_active():
-	score += click_power;
+func score_increase_active(amount = click_power):
+	score += amount;
 func score_decrease(amount):
 	score -= amount
 
