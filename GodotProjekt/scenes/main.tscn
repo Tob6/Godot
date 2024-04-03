@@ -211,7 +211,7 @@ theme = ExtResource("7_pn60c")
 text = "Wheel o' Fortune"
 script = ExtResource("18_5rfyy")
 
-[node name="PremiumShop" parent="." instance=ExtResource("18_dynxl")]
+[node name="PremiumShop" parent="main" instance=ExtResource("18_dynxl")]
 offset_left = 105.0
 offset_top = 381.0
 offset_right = 105.0

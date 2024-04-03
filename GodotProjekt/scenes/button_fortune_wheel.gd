@@ -9,8 +9,6 @@ func _on_button_down():
 	if fortune_wheel_is_loaded == true:
 		fortune_wheel_is_loaded = false;
 		Global.main_node_scene.unload_scene();
-		return;
 	if fortune_wheel_is_loaded == false:
 		fortune_wheel_is_loaded = true;
 		Global.main_node_scene.load_scene('fortune_wheel');
-		return;
