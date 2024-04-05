@@ -29,23 +29,23 @@ func increase_passive_income(amount):
 func increase_upgrade_mult(type):
 	match type:
 		0:
-			click_upgrade_mult += 1.5 * click_upgrade_mult;
+			click_upgrade_mult *= 2.5;
 		1:
-			passive1_upgrade_mult += 0.1;
+			passive1_upgrade_mult *= 1.1;
 		2:
-			passive2_upgrade_mult += 0.1;
+			passive2_upgrade_mult *= 1.1;
 		3:
-			passive3_upgrade_mult += 0.1;
+			passive3_upgrade_mult *= 1.1;
 		4:
-			passive4_upgrade_mult += 0.1;
+			passive4_upgrade_mult *= 1.1;
 		5:
-			passive5_upgrade_mult += 0.1;
+			passive5_upgrade_mult *= 1.1;
 		6:
-			passive6_upgrade_mult += 0.1;
+			passive6_upgrade_mult *= 1.1;
 		7:
-			passive7_upgrade_mult += 0.1;
+			passive7_upgrade_mult *= 1.1;
 		8:
-			passive8_upgrade_mult += 0.1;
+			passive8_upgrade_mult *= 1.1;
 func get_upgrade_mult(type):
 	match type:
 		0:
