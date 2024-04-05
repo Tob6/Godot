@@ -134,8 +134,12 @@ func reward():
 	
 	var price = prices[price_index];
 	
-	ScoreNode.score_increase_active(price.amount);
+	#ScoreNode.score_increase_active(price.amount);
+	ScoreNode.increase_player_arbitrary(price.price,price.amount)
 	print("given reward");
+	
+	$"../reward/reward_countdown".start();
+	$"../reward".play_animation(prices[price_index], price_node);
 
 func is_inside(angle,sector):
 	#is schon drienn?

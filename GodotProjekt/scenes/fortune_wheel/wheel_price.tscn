@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://chuytmkimhcgc"]
+[gd_scene load_steps=3 format=3 uid="uid://bu0rhhue0hyxk"]
 
 [ext_resource type="Texture2D" uid="uid://b6y3djdjbn7hw" path="res://assets/textures/apple.png" id="1_lvdgi"]
 [ext_resource type="Script" path="res://scenes/fortune_wheel/price.gd" id="2_1qfgg"]

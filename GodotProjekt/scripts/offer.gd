@@ -7,9 +7,9 @@ func _ready():
 	$PanelContainer/MarginContainer/VBoxContainer/Button.text = get_meta("price") + "€"
 	
 	if get_meta("type") == "gold":
-		$PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/TypeSprite.texture = ResourceLoader.load("res://assets/textures/Gold.png")
+		$PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/TypeSprite.texture = ResourceLoader.load("res://assets/textures/gold.png")
 	elif get_meta("type") == "diamond":
-		$PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/TypeSprite.texture = ResourceLoader.load("res://assets/textures/Diamond.png")
+		$PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/TypeSprite.texture = ResourceLoader.load("res://assets/textures/diamond.png")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):

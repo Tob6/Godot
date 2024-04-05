@@ -25,10 +25,13 @@ func _ready():
 	if(ran_num==1):
 		pos_1 = pos_left;
 		pos_2 = pos_right;
-	$close.set_position(pos_1);
+		
+	#global position heißt Position auf gesamten Screen
+	#set_position meint position in relation zur Position der Add Scene (im 2D world space)
+	$close.set_global_position(pos_1);
 	
 	#only works when both "close" and "continue" buttons are identical in size (and scale)
-	$continue.set_position(pos_2);
+	$continue.set_global_position(pos_2);
 
 func _on_continue_button_pressed():
 	#continue button was pressed -> continue on to "download this app image"
@@ -43,13 +46,14 @@ func _on_continue_button_pressed():
 
 func _on_close_button_pressed():
 	#closing button was pressed
-	get_parent().remove_child(self)
 	ad_finished.emit()
+	get_parent().remove_child(self)
+	
 
 
 
 func _on_close_countdown_timeout():
-	#$close.visible = true;
+	$close.visible = true;
 	$close/close_button.visible = true;
 	$close/close_button.disabled = false;
 	$close/countdown_label.visible = false;

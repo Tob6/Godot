@@ -45,9 +45,8 @@ func _on_ad_finished():
 	fortune_wheel()
 	
 func fortune_wheel():
-	#TODO Fortune Wheel einbauen
-	print("Fortune Wheel")
-	pass
+	var scene_fortune_wheel: PackedScene = preload("res://scenes/fortune_wheel.tscn")
+	Global.main_node_scene.load_scene('fortune_wheel');
 
 
 func _on_wheel_button_pressed():

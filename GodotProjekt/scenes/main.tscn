@@ -17,7 +17,7 @@
 [ext_resource type="Script" path="res://scripts/autosave_timer.gd" id="14_84jgs"]
 [ext_resource type="Script" path="res://scripts/animation_player.gd" id="16_l12ug"]
 [ext_resource type="Script" path="res://scenes/button_fortune_wheel.gd" id="18_5rfyy"]
-[ext_resource type="PackedScene" uid="uid://cqhn0r8gv56xq" path="res://scenes/premium_shop.tscn" id="18_dynxl"]
+[ext_resource type="PackedScene" uid="uid://cj0unp52lqfle" path="res://scenes/premium_shop.tscn" id="18_dynxl"]
 
 [sub_resource type="Animation" id="Animation_buqdj"]
 length = 0.001
@@ -212,10 +212,10 @@ text = "Wheel o' Fortune"
 script = ExtResource("18_5rfyy")
 
 [node name="PremiumShop" parent="main" instance=ExtResource("18_dynxl")]
-offset_left = 105.0
-offset_top = 381.0
-offset_right = 105.0
-offset_bottom = 381.0
+offset_left = 4.0
+offset_top = 557.0
+offset_right = 4.0
+offset_bottom = 557.0
 
 [connection signal="timeout" from="main/AutoSave" to="main/AutoSave" method="_on_timeout"]
 [connection signal="button_down" from="main/AdButton" to="main/AdButton" method="_on_button_down"]

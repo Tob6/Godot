@@ -1,12 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://cqhn0r8gv56xq"]
+[gd_scene load_steps=9 format=3 uid="uid://cj0unp52lqfle"]
 
-[ext_resource type="PackedScene" uid="uid://f82pa8uhgjhx" path="res://scenes/offer.tscn" id="1_72o7b"]
+[ext_resource type="PackedScene" path="res://scenes/offer.tscn" id="1_72o7b"]
 [ext_resource type="Script" path="res://scripts/premium_shop.gd" id="1_wt31g"]
-[ext_resource type="Texture2D" uid="uid://cr2npb8v5wmho" path="res://assets/textures/Gold.png" id="3_7i4b1"]
-[ext_resource type="Theme" uid="uid://clsxu0gwjbjhx" path="res://themes/offer.tres" id="3_tky70"]
+[ext_resource type="Texture2D" uid="uid://cr2npb8v5wmho" path="res://assets/textures/gold.png" id="3_7i4b1"]
+[ext_resource type="Theme" uid="uid://dnq3rkh2h0krw" path="res://themes/offer.tres" id="3_tky70"]
 [ext_resource type="Texture2D" uid="uid://f35jnlpvfto3" path="res://assets/textures/achievement_menu/IconExit.png" id="3_toy78"]
 [ext_resource type="Texture2D" uid="uid://2d22we31rop8" path="res://assets/textures/achievement_menu/Icon6.png" id="4_dx33l"]
-[ext_resource type="Texture2D" uid="uid://3qn6yd3gdbkt" path="res://assets/textures/Diamond.png" id="4_jw7sx"]
+[ext_resource type="Texture2D" uid="uid://3qn6yd3gdbkt" path="res://assets/textures/diamond.png" id="4_jw7sx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6miu7"]
 bg_color = Color(0.980392, 0.878431, 0.752941, 1)
