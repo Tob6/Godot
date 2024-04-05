@@ -1,0 +1,163 @@
+[gd_scene load_steps=9 format=3 uid="uid://cqhn0r8gv56xq"]
+
+[ext_resource type="PackedScene" uid="uid://f82pa8uhgjhx" path="res://scenes/offer.tscn" id="1_72o7b"]
+[ext_resource type="Script" path="res://scripts/premium_shop.gd" id="1_wt31g"]
+[ext_resource type="Texture2D" uid="uid://cr2npb8v5wmho" path="res://assets/textures/Gold.png" id="3_7i4b1"]
+[ext_resource type="Theme" uid="uid://clsxu0gwjbjhx" path="res://themes/offer.tres" id="3_tky70"]
+[ext_resource type="Texture2D" uid="uid://f35jnlpvfto3" path="res://assets/textures/achievement_menu/IconExit.png" id="3_toy78"]
+[ext_resource type="Texture2D" uid="uid://2d22we31rop8" path="res://assets/textures/achievement_menu/Icon6.png" id="4_dx33l"]
+[ext_resource type="Texture2D" uid="uid://3qn6yd3gdbkt" path="res://assets/textures/Diamond.png" id="4_jw7sx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6miu7"]
+bg_color = Color(0.980392, 0.878431, 0.752941, 1)
+border_width_left = 12
+border_width_top = 12
+border_width_right = 12
+border_width_bottom = 12
+border_color = Color(0.447059, 0.556863, 0.968627, 1)
+
+[node name="PremiumShop" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -642.0
+offset_bottom = -563.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wt31g")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_right = 854.0
+offset_bottom = 378.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_6miu7")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="TopBar" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_tky70")
+theme_override_constants/separation = 22
+
+[node name="ExitButton" type="TextureButton" parent="PanelContainer/VBoxContainer/TopBar"]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+texture_normal = ExtResource("3_toy78")
+stretch_mode = 4
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/VBoxContainer/TopBar"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer/TopBar/PanelContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/VBoxContainer/TopBar/PanelContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_7i4b1")
+expand_mode = 3
+
+[node name="GoldLabel" type="Label" parent="PanelContainer/VBoxContainer/TopBar/PanelContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "0"
+
+[node name="PanelContainer2" type="PanelContainer" parent="PanelContainer/VBoxContainer/TopBar"]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/VBoxContainer/TopBar/PanelContainer2"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/VBoxContainer/TopBar/PanelContainer2/HBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("4_jw7sx")
+expand_mode = 3
+
+[node name="DiamondLabel" type="Label" parent="PanelContainer/VBoxContainer/TopBar/PanelContainer2/HBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "0"
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 39
+
+[node name="offers" type="VBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Gold" type="HBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer/HBoxContainer/offers"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Gold1" parent="PanelContainer/VBoxContainer/MarginContainer/HBoxContainer/offers/Gold" instance=ExtResource("1_72o7b")]
+layout_mode = 2
+metadata/type = "gold"
+metadata/amount = 10
+
+[node name="Gold2" parent="PanelContainer/VBoxContainer/MarginContainer/HBoxContainer/offers/Gold" instance=ExtResource("1_72o7b")]
+layout_mode = 2
+metadata/type = "gold"
+metadata/amount = 20
+
+[node name="Gold3" parent="PanelContainer/VBoxContainer/MarginContainer/HBoxContainer/offers/Gold" instance=ExtResource("1_72o7b")]
+layout_mode = 2
+metadata/type = "gold"
+metadata/amount = 50
+
+[node name="Diamond" type="HBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer/HBoxContainer/offers"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Diamond1" parent="PanelContainer/VBoxContainer/MarginContainer/HBoxContainer/offers/Diamond" instance=ExtResource("1_72o7b")]
+layout_mode = 2
+
+[node name="Diamond2" parent="PanelContainer/VBoxContainer/MarginContainer/HBoxContainer/offers/Diamond" instance=ExtResource("1_72o7b")]
+layout_mode = 2
+metadata/amount = 3
+
+[node name="Diamond3" parent="PanelContainer/VBoxContainer/MarginContainer/HBoxContainer/offers/Diamond" instance=ExtResource("1_72o7b")]
+layout_mode = 2
+metadata/amount = 8
+
+[node name="SpinTheWheel" type="PanelContainer" parent="PanelContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_tky70")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer/HBoxContainer/SpinTheWheel"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer/HBoxContainer/SpinTheWheel/MarginContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/VBoxContainer/MarginContainer/HBoxContainer/SpinTheWheel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("4_dx33l")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer/HBoxContainer/SpinTheWheel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Spin the wheel!"
+
+[node name="WheelButton" type="Button" parent="PanelContainer/VBoxContainer/MarginContainer/HBoxContainer/SpinTheWheel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Free!"
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/TopBar/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="purchase" from="PanelContainer/VBoxContainer/MarginContainer/HBoxContainer/offers/Gold/Gold1" to="." method="_on_gold_1_purchase"]
+[connection signal="purchase" from="PanelContainer/VBoxContainer/MarginContainer/HBoxContainer/offers/Gold/Gold2" to="." method="_on_gold_2_purchase"]
+[connection signal="purchase" from="PanelContainer/VBoxContainer/MarginContainer/HBoxContainer/offers/Gold/Gold3" to="." method="_on_gold_3_purchase"]
+[connection signal="purchase" from="PanelContainer/VBoxContainer/MarginContainer/HBoxContainer/offers/Diamond/Diamond1" to="." method="_on_diamond_1_purchase"]
+[connection signal="purchase" from="PanelContainer/VBoxContainer/MarginContainer/HBoxContainer/offers/Diamond/Diamond2" to="." method="_on_diamond_2_purchase"]
+[connection signal="purchase" from="PanelContainer/VBoxContainer/MarginContainer/HBoxContainer/offers/Diamond/Diamond3" to="." method="_on_diamond_3_purchase"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/MarginContainer/HBoxContainer/SpinTheWheel/MarginContainer/VBoxContainer/WheelButton" to="." method="_on_wheel_button_pressed"]

@@ -14,7 +14,9 @@ func create_save():
 		"click_power" = ScoreNode.click_power,
 		"passive_income" = ScoreNode.passive_income,
 		"total_clicks" = $AchievementMenu.total_clicks,
-		"time_spent" = $AchievementMenu.time_spent
+		"time_spent" = $AchievementMenu.time_spent,
+		"player_gold" = ScoreNode.player_gold,
+		"player_diamonds" = ScoreNode.player_diamonds
 	}
 	return save
 	
@@ -44,6 +46,8 @@ func load_game():
 		ScoreNode.click_power = node_data["click_power"]
 		$AchievementMenu.total_clicks = node_data["total_clicks"]
 		$AchievementMenu.time_spent = node_data["time_spent"]
+		ScoreNode.player_diamonds = node_data["player_diamonds"]
+		ScoreNode.player_gold = node_data["player_gold"]
 	
 	savegame.close()
 

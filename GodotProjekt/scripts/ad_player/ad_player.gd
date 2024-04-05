@@ -1,5 +1,7 @@
 extends Control
 
+signal ad_finished
+
 func _ready():
 	var rng = RandomNumberGenerator.new()
 	
@@ -42,6 +44,7 @@ func _on_continue_button_pressed():
 func _on_close_button_pressed():
 	#closing button was pressed
 	get_parent().remove_child(self)
+	ad_finished.emit()
 
 
 
