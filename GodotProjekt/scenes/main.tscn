@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://lb6qd8sh0pvp" path="res://scenes/upgrades.tscn" id="1_ncpo6"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_uuduc"]
 [ext_resource type="Script" path="res://scripts/clicker.gd" id="3_1xjgb"]
-[ext_resource type="Texture2D" uid="uid://b6y3djdjbn7hw" path="res://assets/textures/Apple.png" id="3_p6myx"]
+[ext_resource type="Texture2D" uid="uid://b6y3djdjbn7hw" path="res://assets/textures/apple.png" id="3_p6myx"]
 [ext_resource type="Script" path="res://scripts/label_passive_income.gd" id="4_nlut3"]
 [ext_resource type="Script" path="res://scripts/label_score.gd" id="5_051ki"]
 [ext_resource type="Script" path="res://scripts/label_click_power.gd" id="6_kj3x0"]

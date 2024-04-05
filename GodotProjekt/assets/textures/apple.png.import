@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cr2npb8v5wmho"
-path="res://.godot/imported/Gold.png-09b4e1757bed0186e26701c517467f55.ctex"
+uid="uid://b6y3djdjbn7hw"
+path="res://.godot/imported/apple.png-2aa6dcf391115d8cbf125a70f22a74bf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/Gold.png"
-dest_files=["res://.godot/imported/Gold.png-09b4e1757bed0186e26701c517467f55.ctex"]
+source_file="res://assets/textures/apple.png"
+dest_files=["res://.godot/imported/apple.png-2aa6dcf391115d8cbf125a70f22a74bf.ctex"]
 
 [params]
 

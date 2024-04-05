@@ -4,29 +4,29 @@ extends Node2D
 #@onready var spr_gold = get_node("gold");
 #@onready var spr_diamond = get_node("diamond");
 
-var apple = preload("res://scenes/fortune_wheel/apple.tscn");
-var gold = preload("res://scenes/fortune_wheel/gold.tscn");
-var diamond = preload("res://scenes/fortune_wheel/diamond.tscn");
+#var apple = preload("res://scenes/fortune_wheel/apple.tscn");
+#var gold = preload("res://scenes/fortune_wheel/gold.tscn");
+#var diamond = preload("res://scenes/fortune_wheel/diamond.tscn");
+
+var price_node = preload("res://scenes/fortune_wheel/wheel_price.tscn");
 
 var prices = [
-	{"price": "apple", "amount":500, "node": gold, "instance": null },
-	{"price": "gold", "amount":500, "node": apple,"instance": null},
-	{"price": "gold", "amount":500,"node": apple, "instance": null},
-	{"price": "apple", "amount":500, "node": apple, "instance": null},
-	{"price": "apple", "amount":500, "node": apple, "instance": null},
-	{"price": "apple", "amount":500, "node": apple, "instance": null},
-	{"price": "apple", "amount":500, "node": apple, "instance": null},
-	{"price": "diamond", "amount":500, "node": diamond, "instance": null}
+	{"price": "apple", "amount":10000,  "instance": null },
+	{"price": "gold", "amount":10, "instance": null},
+	{"price": "gold", "amount":15, "instance": null},
+	{"price": "apple", "amount":50, "instance": null},
+	{"price": "apple", "amount":1000, "instance": null},
+	{"price": "apple", "amount":5000, "instance": null},
+	{"price": "apple", "amount":2000, "instance": null},
+	{"price": "diamond", "amount":1, "instance": null}
 ];
-
-
 
 var rotation_direction = 0;
 var rotation_speed = 0;
 
 var is_spinning = false;		#true, when wheel is spinning definitively
 var spinning_finished = false;
-var rewarded = false
+var rewarded = false;
 
 var mouse_drag = false;			#True, when wheel is following mouse direction
 var reference_pos = Vector2(0,0);
@@ -61,7 +61,7 @@ func _on_area_2d_input_event(_viewport, _event, _shape_idx):
 			rotation_speed = randf_range(15.0, 25.0);
 			mouse_drag = false;				#Redundant
 			is_spinning = true;
-	
+
 func _physics_process(delta):
 	#drag wheel behind mouse
 	if(mouse_drag):
@@ -110,14 +110,15 @@ func instantiate_prices():
 		var angle_rad = angle_grad * PI / 180;
 		
 		var price = prices[i];				#returns element in prices array
-		var price_node = price.node;		#returns apple.tscn; gold.tscn etc.
+		#var price_node = price.node;		#returns apple.tscn; gold.tscn etc.
 		var price_instance = price_node.instantiate();
 		price.instance = price_instance;
 		price_instance.position = Vector2(cos(angle_rad)*150,sin(angle_rad)*150);
-		#price_instance.rotation = 360.0-angle_grad;
 		price_instance.rotation = angle_rad; #+ 90.0;
+		price_instance.type = price.price;
 		$".".call_deferred("add_child",price_instance);	#kp was diese Zeile macht
-		#get_tree().get_root().call_deferred("add_child",price_instance);	#kp was diese Zeile macht
+		price_instance.set_tex(str(price.amount));
+
 
 func reward():
 	print("rotation:" + str(rotation_degrees));
@@ -136,11 +137,10 @@ func reward():
 	ScoreNode.score_increase_active(price.amount);
 	print("given reward");
 
-
 func is_inside(angle,sector):
+	#is schon drienn?
 	#secotr must be array of 2 elements
 	# all values is angle in rad
 	if(angle >= sector[0] && angle < sector[1]):
 		return true;
 	return false;
-
