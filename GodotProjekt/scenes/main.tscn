@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_uuduc"]
 [ext_resource type="Texture2D" uid="uid://geriuboav1u5" path="res://assets/textures/Hintergrund.png" id="2_jlpq2"]
 [ext_resource type="Script" path="res://scripts/clicker.gd" id="3_1xjgb"]
-[ext_resource type="Texture2D" uid="uid://b6y3djdjbn7hw" path="res://assets/textures/Apple.png" id="3_p6myx"]
+[ext_resource type="Texture2D" uid="uid://b6y3djdjbn7hw" path="res://assets/textures/apple.png" id="3_p6myx"]
 [ext_resource type="Script" path="res://scripts/label_passive_income.gd" id="4_nlut3"]
 [ext_resource type="Script" path="res://scripts/label_score.gd" id="5_051ki"]
 [ext_resource type="Script" path="res://scripts/label_click_power.gd" id="6_kj3x0"]
@@ -19,7 +19,8 @@
 [ext_resource type="Script" path="res://scripts/animation_player.gd" id="16_l12ug"]
 [ext_resource type="Texture2D" uid="uid://bn42xlhs80y0u" path="res://assets/textures/PremiumShopIcon (1).png" id="17_dgwer"]
 [ext_resource type="PackedScene" uid="uid://beqoj5hl3kqvv" path="res://scenes/fortune_wheel.tscn" id="17_qofxq"]
-[ext_resource type="Script" path="res://scenes/button_fortune_wheel.gd" id="18_5rfyy"]
+[ext_resource type="Script" path="res://scenes/scenes/button_fortune_wheel.gd" id="18_5rfyy"]
+[ext_resource type="PackedScene" uid="uid://cj0unp52lqfle" path="res://scenes/premium_shop.tscn" id="18_dynxl"]
 [ext_resource type="Texture2D" uid="uid://bwwbjpuwfvx2c" path="res://assets/textures/AchievementMenuIcon.png" id="20_riw2c"]
 
 [sub_resource type="Animation" id="Animation_buqdj"]
@@ -245,6 +246,12 @@ script = ExtResource("18_5rfyy")
 visible = false
 position = Vector2(143, 469)
 scale = Vector2(0.5, 0.5)
+
+[node name="PremiumShop" parent="main" instance=ExtResource("18_dynxl")]
+offset_left = 4.0
+offset_top = 557.0
+offset_right = 4.0
+offset_bottom = 557.0
 
 [connection signal="timeout" from="main/AutoSave" to="main/AutoSave" method="_on_timeout"]
 [connection signal="button_down" from="main/AdButton" to="main/AdButton" method="_on_button_down"]
