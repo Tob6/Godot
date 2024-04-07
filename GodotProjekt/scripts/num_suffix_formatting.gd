@@ -10,11 +10,11 @@ func number_with_suffix(number,pos_after_comma = 2):
 		1:
 			suffix = "k"
 		2:
-			suffix = "Mill"
+			suffix = "M"
 		3:
-			suffix = "Bill"
+			suffix = "B"
 		4:
-			suffix = "Trill"
+			suffix = "T"
 		5:
 			suffix = "Gazillions!! 🥵"
 	

@@ -19,6 +19,7 @@ texture = ExtResource("2_k8lku")
 offset_left = 4.0
 offset_right = 980.0
 offset_bottom = 405.0
+scale = Vector2(1.8, 1.8)
 theme = ExtResource("1_gt2m5")
 theme_override_styles/panel = SubResource("StyleBoxTexture_1bymm")
 script = ExtResource("3_2ni3m")
