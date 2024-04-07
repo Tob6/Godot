@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dmwftnf8hyqhu" path="res://assets/textures/download_ad.png" id="2_g8h5e"]
 [ext_resource type="Script" path="res://scripts/ad_player/download_image.gd" id="2_gf2eu"]
 [ext_resource type="Script" path="res://scripts/ad_player/video_player.gd" id="3_g8tte"]
-[ext_resource type="Script" path="res://scenes/countdown_label.gd" id="5_d5fg6"]
+[ext_resource type="Script" path="res://scripts/countdown_label.gd" id="5_d5fg6"]
 [ext_resource type="Theme" uid="uid://pnya52fbemkh" path="res://themes/achievement_menu_theme.tres" id="5_lemk7"]
 
 [node name="AdPlayer" type="Control"]

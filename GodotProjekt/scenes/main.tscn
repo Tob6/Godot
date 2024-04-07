@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://d0ssv5dwwdxs2"]
+[gd_scene load_steps=28 format=3 uid="uid://d0ssv5dwwdxs2"]
 
 [ext_resource type="PackedScene" uid="uid://lb6qd8sh0pvp" path="res://scenes/upgrades.tscn" id="1_ncpo6"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_uuduc"]
@@ -19,7 +19,8 @@
 [ext_resource type="Script" path="res://scripts/animation_player.gd" id="16_l12ug"]
 [ext_resource type="Texture2D" uid="uid://bn42xlhs80y0u" path="res://assets/textures/PremiumShopIcon (1).png" id="17_dgwer"]
 [ext_resource type="PackedScene" uid="uid://beqoj5hl3kqvv" path="res://scenes/fortune_wheel.tscn" id="17_qofxq"]
-[ext_resource type="Script" path="res://scenes/button_fortune_wheel.gd" id="18_5rfyy"]
+[ext_resource type="Script" path="res://scripts/button_fortune_wheel.gd" id="18_5rfyy"]
+[ext_resource type="Script" path="res://scenes/button_premium_shop.gd" id="18_8lsds"]
 [ext_resource type="PackedScene" uid="uid://cj0unp52lqfle" path="res://scenes/premium_shop.tscn" id="18_dynxl"]
 [ext_resource type="Texture2D" uid="uid://bwwbjpuwfvx2c" path="res://assets/textures/AchievementMenuIcon.png" id="20_riw2c"]
 
@@ -142,14 +143,15 @@ vertical_alignment = 1
 script = ExtResource("5_051ki")
 
 [node name="Panel" type="Panel" parent="main"]
-offset_left = 1407.0
-offset_right = 1955.0
-offset_bottom = 135.0
+offset_left = 1371.0
+offset_top = 3.0
+offset_right = 1919.0
+offset_bottom = 138.0
 
-[node name="label_click_power" type="Label" parent="main"]
-offset_left = 1407.0
+[node name="label_click_power" type="Label" parent="main/Panel"]
+layout_mode = 0
 offset_top = 30.0
-offset_right = 1728.0
+offset_right = 321.0
 offset_bottom = 75.0
 scale = Vector2(1.70173, 1.70173)
 theme_override_font_sizes/font_size = 32
@@ -159,10 +161,11 @@ vertical_alignment = 1
 script = ExtResource("6_kj3x0")
 
 [node name="upgrades" parent="main" instance=ExtResource("1_ncpo6")]
-offset_left = 1407.0
-offset_top = 134.0
-offset_right = 1881.0
-offset_bottom = 951.0
+offset_left = 1379.0
+offset_top = 140.0
+offset_right = 1853.0
+offset_bottom = 959.0
+scale = Vector2(1.125, 1.125)
 
 [node name="AdButton" type="Button" parent="main"]
 offset_left = 183.0
@@ -218,6 +221,7 @@ offset_right = 67.0
 offset_bottom = 289.0
 scale = Vector2(4.33, 4.33)
 texture_normal = ExtResource("17_dgwer")
+script = ExtResource("18_8lsds")
 
 [node name="AchievementMenu" parent="main" instance=ExtResource("9_au4c5")]
 visible = false
@@ -242,6 +246,7 @@ text = "Wheel o' Fortune"
 script = ExtResource("18_5rfyy")
 
 [node name="PremiumShop" parent="main" instance=ExtResource("18_dynxl")]
+visible = false
 offset_left = 133.0
 offset_top = 179.0
 offset_right = 133.0
@@ -259,4 +264,5 @@ scale = Vector2(0.5, 0.5)
 [connection signal="pressed" from="main/Load" to="main/Load" method="_on_pressed"]
 [connection signal="pressed" from="main/DeleteSave" to="main/DeleteSave" method="_on_pressed"]
 [connection signal="pressed" from="main/AchievementMenuButton" to="main/AchievementMenuButton" method="_on_pressed"]
+[connection signal="pressed" from="main/PremiumShopButton" to="main/PremiumShopButton" method="_on_pressed"]
 [connection signal="button_down" from="main/button_fortune_wheel" to="main/button_fortune_wheel" method="_on_button_down"]
