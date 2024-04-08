@@ -20,7 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://bn42xlhs80y0u" path="res://assets/textures/PremiumShopIcon (1).png" id="17_dgwer"]
 [ext_resource type="PackedScene" uid="uid://beqoj5hl3kqvv" path="res://scenes/fortune_wheel.tscn" id="17_qofxq"]
 [ext_resource type="Script" path="res://scripts/button_fortune_wheel.gd" id="18_5rfyy"]
-[ext_resource type="Script" path="res://scenes/button_premium_shop.gd" id="18_8lsds"]
+[ext_resource type="Script" path="res://scripts/button_premium_shop.gd" id="18_8lsds"]
 [ext_resource type="PackedScene" uid="uid://cj0unp52lqfle" path="res://scenes/premium_shop.tscn" id="18_dynxl"]
 [ext_resource type="Texture2D" uid="uid://bwwbjpuwfvx2c" path="res://assets/textures/AchievementMenuIcon.png" id="20_riw2c"]
 
@@ -167,40 +167,6 @@ offset_right = 1853.0
 offset_bottom = 959.0
 scale = Vector2(1.125, 1.125)
 
-[node name="AdButton" type="Button" parent="main"]
-offset_left = 183.0
-offset_top = 950.0
-offset_right = 294.0
-offset_bottom = 1000.0
-theme = ExtResource("7_pn60c")
-text = "Play Ad
-"
-script = ExtResource("7_470dd")
-
-[node name="Save" type="Button" parent="main"]
-offset_left = 17.0
-offset_top = 905.0
-offset_right = 87.0
-offset_bottom = 954.0
-text = "Save"
-script = ExtResource("11_863vk")
-
-[node name="Load" type="Button" parent="main"]
-offset_left = 17.0
-offset_top = 962.0
-offset_right = 82.0
-offset_bottom = 1006.0
-text = "Load"
-script = ExtResource("12_8abty")
-
-[node name="DeleteSave" type="Button" parent="main"]
-offset_left = 12.0
-offset_top = 1015.0
-offset_right = 159.0
-offset_bottom = 1061.0
-text = "Delete Save"
-script = ExtResource("13_xv2w0")
-
 [node name="AchievementMenuButton" type="TextureButton" parent="main"]
 offset_left = 6.0
 offset_top = 9.0
@@ -236,15 +202,6 @@ libraries = {
 }
 script = ExtResource("16_l12ug")
 
-[node name="button_fortune_wheel" type="Button" parent="main"]
-offset_left = 182.0
-offset_top = 1016.0
-offset_right = 438.0
-offset_bottom = 1066.0
-theme = ExtResource("7_pn60c")
-text = "Wheel o' Fortune"
-script = ExtResource("18_5rfyy")
-
 [node name="PremiumShop" parent="main" instance=ExtResource("18_dynxl")]
 visible = false
 offset_left = 133.0
@@ -253,16 +210,62 @@ offset_right = 133.0
 offset_bottom = 179.0
 scale = Vector2(1.4, 1.4)
 
+[node name="debug" type="Node2D" parent="main"]
+visible = false
+
+[node name="button_fortune_wheel" type="Button" parent="main/debug"]
+offset_left = 182.0
+offset_top = 1016.0
+offset_right = 438.0
+offset_bottom = 1066.0
+theme = ExtResource("7_pn60c")
+text = "Wheel o' Fortune"
+script = ExtResource("18_5rfyy")
+
+[node name="AdButton" type="Button" parent="main/debug"]
+offset_left = 183.0
+offset_top = 950.0
+offset_right = 294.0
+offset_bottom = 1000.0
+theme = ExtResource("7_pn60c")
+text = "Play Ad
+"
+script = ExtResource("7_470dd")
+
+[node name="Save" type="Button" parent="main/debug"]
+offset_left = 17.0
+offset_top = 905.0
+offset_right = 87.0
+offset_bottom = 954.0
+text = "Save"
+script = ExtResource("11_863vk")
+
+[node name="Load" type="Button" parent="main/debug"]
+offset_left = 17.0
+offset_top = 962.0
+offset_right = 82.0
+offset_bottom = 1006.0
+text = "Load"
+script = ExtResource("12_8abty")
+
+[node name="DeleteSave" type="Button" parent="main/debug"]
+offset_left = 12.0
+offset_top = 1015.0
+offset_right = 159.0
+offset_bottom = 1061.0
+text = "Delete Save"
+script = ExtResource("13_xv2w0")
+
 [node name="fortune_wheel" parent="." instance=ExtResource("17_qofxq")]
 visible = false
 position = Vector2(143, 469)
 scale = Vector2(0.5, 0.5)
 
 [connection signal="timeout" from="main/AutoSave" to="main/AutoSave" method="_on_timeout"]
-[connection signal="button_down" from="main/AdButton" to="main/AdButton" method="_on_button_down"]
-[connection signal="pressed" from="main/Save" to="main/Save" method="_on_pressed"]
-[connection signal="pressed" from="main/Load" to="main/Load" method="_on_pressed"]
-[connection signal="pressed" from="main/DeleteSave" to="main/DeleteSave" method="_on_pressed"]
 [connection signal="pressed" from="main/AchievementMenuButton" to="main/AchievementMenuButton" method="_on_pressed"]
 [connection signal="pressed" from="main/PremiumShopButton" to="main/PremiumShopButton" method="_on_pressed"]
-[connection signal="button_down" from="main/button_fortune_wheel" to="main/button_fortune_wheel" method="_on_button_down"]
+[connection signal="button_down" from="main/debug/button_fortune_wheel" to="main/debug/button_fortune_wheel" method="_on_button_down"]
+[connection signal="button_down" from="main/debug/AdButton" to="main/debug/AdButton" method="_on_button_down"]
+[connection signal="pressed" from="main/debug/Save" to="main/debug/Save" method="_on_pressed"]
+[connection signal="pressed" from="main/debug/Load" to="main/debug/Load" method="_on_pressed"]
+[connection signal="pressed" from="main/debug/DeleteSave" to="main/debug/DeleteSave" method="_on_pressed"]

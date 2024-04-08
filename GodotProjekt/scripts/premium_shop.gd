@@ -8,6 +8,7 @@ func _process(_delta):
 	$PanelContainer/VBoxContainer/TopBar/PanelContainer2/HBoxContainer2/DiamondLabel.text = str(ScoreNode.player_diamonds)
 
 func purchase(type, amount, price):
+	$"../AchievementMenu".increase_money_spent(price);
 	if type == "diamond":
 		ScoreNode.increase_player_diamonds(amount)
 	elif type == "gold":

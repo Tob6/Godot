@@ -121,25 +121,26 @@ func instantiate_prices():
 
 
 func reward():
-	print("rotation:" + str(rotation_degrees));
+	#print("rotation:" + str(rotation_degrees));
 	
 	rotation_degrees = fmod(rotation_degrees,360.0);
-	print("rotation aus degrees:" + str(rotation_degrees));
-	print("actual rotation" + str(rotation));
+	#print("rotation aus degrees:" + str(rotation_degrees));
+	#print("actual rotation" + str(rotation));
 	var tmp_rotation = 360.0 - rotation_degrees;
-	print("tmprotation:" + str(tmp_rotation));
+	#print("tmprotation:" + str(tmp_rotation));
 
 	var price_index = floor(tmp_rotation/(360.0/prices.size()))
-	print("index: " + str(price_index));
+	#print("index: " + str(price_index));
 	
 	var price = prices[price_index];
 	
 	#ScoreNode.score_increase_active(price.amount);
 	ScoreNode.increase_player_arbitrary(price.price,price.amount)
-	print("given reward");
+	#print("given reward");
 	
 	$"../reward/reward_countdown".start();
 	$"../reward".play_animation(prices[price_index], price_node);
+	$"../../AchievementMenu".increase_wheels_spun();
 
 func is_inside(angle,sector):
 	#is schon drienn?

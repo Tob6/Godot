@@ -46,6 +46,7 @@ func _on_continue_button_pressed():
 
 func _on_close_button_pressed():
 	#closing button was pressed
+	$"../../AchievementMenu".increase_ads_watched();
 	ad_finished.emit()
 	get_parent().remove_child(self)
 	
