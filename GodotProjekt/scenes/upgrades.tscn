@@ -42,18 +42,18 @@ size_flags_horizontal = 10
 theme = ExtResource("1_667im")
 theme_override_constants/separation = 9
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/ScrollCon/VBoxContainer"]
+[node name="ClickBoost" type="HBoxContainer" parent="MarginContainer/ScrollCon/VBoxContainer"]
 layout_direction = 2
 layout_mode = 2
 size_flags_horizontal = 8
 
-[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/ScrollCon/VBoxContainer/HBoxContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/ScrollCon/VBoxContainer/ClickBoost"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 text = "Stronger Fingers
 Doubles Click Power"
 
-[node name="click_boost" type="Button" parent="MarginContainer/ScrollCon/VBoxContainer/HBoxContainer"]
+[node name="ClickBoostButton" type="Button" parent="MarginContainer/ScrollCon/VBoxContainer/ClickBoost"]
 texture_filter = 1
 custom_minimum_size = Vector2(160, 80)
 layout_mode = 2
@@ -65,27 +65,27 @@ metadata/click_increase = 1.0
 metadata/passive_increase = 0.0
 metadata/Type = 0
 
-[node name="Sprite2D" type="Sprite2D" parent="MarginContainer/ScrollCon/VBoxContainer/HBoxContainer"]
+[node name="CursorSprite" type="Sprite2D" parent="MarginContainer/ScrollCon/VBoxContainer/ClickBoost"]
 position = Vector2(-47, 37)
 scale = Vector2(1.9375, 1.9375)
 texture = ExtResource("3_4ofjw")
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/ScrollCon/VBoxContainer"]
+[node name="PassiveIncome1" type="HBoxContainer" parent="MarginContainer/ScrollCon/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 8
 
-[node name="Basked" type="Sprite2D" parent="MarginContainer/ScrollCon/VBoxContainer/HBoxContainer2"]
+[node name="BasketSprite" type="Sprite2D" parent="MarginContainer/ScrollCon/VBoxContainer/PassiveIncome1"]
 position = Vector2(-45, 32)
 scale = Vector2(1.8125, 1.8125)
 texture = ExtResource("4_lcyid")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/ScrollCon/VBoxContainer/HBoxContainer2"]
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/ScrollCon/VBoxContainer/PassiveIncome1"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 text = "Picnic Basket
 +1 Apple per Second"
 
-[node name="passive_income_1" type="Button" parent="MarginContainer/ScrollCon/VBoxContainer/HBoxContainer2"]
+[node name="PassiveIncomeButton" type="Button" parent="MarginContainer/ScrollCon/VBoxContainer/PassiveIncome1"]
 texture_filter = 1
 custom_minimum_size = Vector2(160, 80)
 layout_mode = 2
@@ -97,22 +97,22 @@ metadata/click_increase = 0.0
 metadata/passive_increase = 1.0
 metadata/Type = 1
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/ScrollCon/VBoxContainer"]
+[node name="PassiveIncome2" type="HBoxContainer" parent="MarginContainer/ScrollCon/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 8
 
-[node name="Schubkarre" type="Sprite2D" parent="MarginContainer/ScrollCon/VBoxContainer/HBoxContainer3"]
+[node name="PushcartSprite" type="Sprite2D" parent="MarginContainer/ScrollCon/VBoxContainer/PassiveIncome2"]
 position = Vector2(-42, 39)
 scale = Vector2(2.07813, 2.07813)
 texture = ExtResource("5_vukbj")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/ScrollCon/VBoxContainer/HBoxContainer3"]
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/ScrollCon/VBoxContainer/PassiveIncome2"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 text = "Collection Cart
 +5 Apples per Second"
 
-[node name="passive_income_2" type="Button" parent="MarginContainer/ScrollCon/VBoxContainer/HBoxContainer3"]
+[node name="PassiveIncomeButton" type="Button" parent="MarginContainer/ScrollCon/VBoxContainer/PassiveIncome2"]
 texture_filter = 1
 custom_minimum_size = Vector2(160, 80)
 layout_mode = 2
@@ -124,22 +124,22 @@ metadata/click_increase = 0.0
 metadata/passive_increase = 5.0
 metadata/Type = 2
 
-[node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/ScrollCon/VBoxContainer"]
+[node name="PassiveIncome3" type="HBoxContainer" parent="MarginContainer/ScrollCon/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 8
 
-[node name="Andy" type="Sprite2D" parent="MarginContainer/ScrollCon/VBoxContainer/HBoxContainer4"]
+[node name="AndySprite" type="Sprite2D" parent="MarginContainer/ScrollCon/VBoxContainer/PassiveIncome3"]
 position = Vector2(-50, 38)
 scale = Vector2(2.28125, 2.28125)
 texture = ExtResource("6_ei4em")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/ScrollCon/VBoxContainer/HBoxContainer4"]
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/ScrollCon/VBoxContainer/PassiveIncome3"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 text = "Helping Hand
 +20 Apples per Second"
 
-[node name="passive_income_3" type="Button" parent="MarginContainer/ScrollCon/VBoxContainer/HBoxContainer4"]
+[node name="PassiveIncomeButton" type="Button" parent="MarginContainer/ScrollCon/VBoxContainer/PassiveIncome3"]
 texture_filter = 1
 custom_minimum_size = Vector2(160, 80)
 layout_mode = 2
@@ -151,22 +151,22 @@ metadata/click_increase = 0.0
 metadata/passive_increase = 20.0
 metadata/Type = 3
 
-[node name="HBoxContainer5" type="HBoxContainer" parent="MarginContainer/ScrollCon/VBoxContainer"]
+[node name="PassiveIncome4" type="HBoxContainer" parent="MarginContainer/ScrollCon/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 8
 
-[node name="Dna" type="Sprite2D" parent="MarginContainer/ScrollCon/VBoxContainer/HBoxContainer5"]
+[node name="DnaSprite" type="Sprite2D" parent="MarginContainer/ScrollCon/VBoxContainer/PassiveIncome4"]
 position = Vector2(-46, 42)
 scale = Vector2(2.01563, 2.01563)
 texture = ExtResource("7_bxs8e")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/ScrollCon/VBoxContainer/HBoxContainer5"]
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/ScrollCon/VBoxContainer/PassiveIncome4"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 text = "Genetic Modification
 +100 Apples per Second"
 
-[node name="passive_income_3" type="Button" parent="MarginContainer/ScrollCon/VBoxContainer/HBoxContainer5"]
+[node name="PassiveIncomeButton" type="Button" parent="MarginContainer/ScrollCon/VBoxContainer/PassiveIncome4"]
 texture_filter = 1
 custom_minimum_size = Vector2(160, 80)
 layout_mode = 2
@@ -178,22 +178,22 @@ metadata/click_increase = 0.0
 metadata/passive_increase = 100.0
 metadata/Type = 4
 
-[node name="HBoxContainer6" type="HBoxContainer" parent="MarginContainer/ScrollCon/VBoxContainer"]
+[node name="PassiveIncome5" type="HBoxContainer" parent="MarginContainer/ScrollCon/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 8
 
-[node name="Welt" type="Sprite2D" parent="MarginContainer/ScrollCon/VBoxContainer/HBoxContainer6"]
+[node name="GlobeSprite" type="Sprite2D" parent="MarginContainer/ScrollCon/VBoxContainer/PassiveIncome5"]
 position = Vector2(-46, 34)
 scale = Vector2(1.78125, 1.78125)
 texture = ExtResource("8_vovga")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/ScrollCon/VBoxContainer/HBoxContainer6"]
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/ScrollCon/VBoxContainer/PassiveIncome5"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 text = "Appetite for Apples
 +500 Apples per Second"
 
-[node name="passive_income_3" type="Button" parent="MarginContainer/ScrollCon/VBoxContainer/HBoxContainer6"]
+[node name="PassiveIncomeButton" type="Button" parent="MarginContainer/ScrollCon/VBoxContainer/PassiveIncome5"]
 texture_filter = 1
 custom_minimum_size = Vector2(160, 80)
 layout_mode = 2
@@ -205,22 +205,22 @@ metadata/click_increase = 0.0
 metadata/passive_increase = 500.0
 metadata/Type = 5
 
-[node name="HBoxContainer7" type="HBoxContainer" parent="MarginContainer/ScrollCon/VBoxContainer"]
+[node name="PassiveIncome6" type="HBoxContainer" parent="MarginContainer/ScrollCon/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 8
 
-[node name="Welt" type="Sprite2D" parent="MarginContainer/ScrollCon/VBoxContainer/HBoxContainer7"]
+[node name="AtomSprite" type="Sprite2D" parent="MarginContainer/ScrollCon/VBoxContainer/PassiveIncome6"]
 position = Vector2(-46, 34)
 scale = Vector2(1.78125, 1.78125)
 texture = ExtResource("9_7tli6")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/ScrollCon/VBoxContainer/HBoxContainer7"]
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/ScrollCon/VBoxContainer/PassiveIncome6"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 text = "Indivisible Apples
 +1k Apples per Second"
 
-[node name="passive_income_3" type="Button" parent="MarginContainer/ScrollCon/VBoxContainer/HBoxContainer7"]
+[node name="PassiveIncomeButton" type="Button" parent="MarginContainer/ScrollCon/VBoxContainer/PassiveIncome6"]
 texture_filter = 1
 custom_minimum_size = Vector2(160, 80)
 layout_mode = 2
@@ -232,22 +232,22 @@ metadata/click_increase = 0.0
 metadata/passive_increase = 1000.0
 metadata/Type = 6
 
-[node name="HBoxContainer8" type="HBoxContainer" parent="MarginContainer/ScrollCon/VBoxContainer"]
+[node name="PassiveIncome7" type="HBoxContainer" parent="MarginContainer/ScrollCon/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 8
 
-[node name="Welt" type="Sprite2D" parent="MarginContainer/ScrollCon/VBoxContainer/HBoxContainer8"]
+[node name="IlluminatiSprite" type="Sprite2D" parent="MarginContainer/ScrollCon/VBoxContainer/PassiveIncome7"]
 position = Vector2(-46, 34)
 scale = Vector2(1.78125, 1.78125)
 texture = ExtResource("10_hqrm6")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/ScrollCon/VBoxContainer/HBoxContainer8"]
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/ScrollCon/VBoxContainer/PassiveIncome7"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 text = "Apple Conspiracy
 +5k Apples per Second"
 
-[node name="passive_income_3" type="Button" parent="MarginContainer/ScrollCon/VBoxContainer/HBoxContainer8"]
+[node name="PassiveIncomeButton" type="Button" parent="MarginContainer/ScrollCon/VBoxContainer/PassiveIncome7"]
 texture_filter = 1
 custom_minimum_size = Vector2(160, 80)
 layout_mode = 2
@@ -259,22 +259,22 @@ metadata/click_increase = 0.0
 metadata/passive_increase = 5000.0
 metadata/Type = 7
 
-[node name="HBoxContainer9" type="HBoxContainer" parent="MarginContainer/ScrollCon/VBoxContainer"]
+[node name="PassiveIncome8" type="HBoxContainer" parent="MarginContainer/ScrollCon/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 8
 
-[node name="Welt" type="Sprite2D" parent="MarginContainer/ScrollCon/VBoxContainer/HBoxContainer9"]
+[node name="YinYanSprite" type="Sprite2D" parent="MarginContainer/ScrollCon/VBoxContainer/PassiveIncome8"]
 position = Vector2(-46, 34)
 scale = Vector2(1.78125, 1.78125)
 texture = ExtResource("11_7vlp6")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/ScrollCon/VBoxContainer/HBoxContainer9"]
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/ScrollCon/VBoxContainer/PassiveIncome8"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 text = "Apple Equilibrium
 +10k Apples per Second"
 
-[node name="passive_income_3" type="Button" parent="MarginContainer/ScrollCon/VBoxContainer/HBoxContainer9"]
+[node name="PassiveIncomeButton" type="Button" parent="MarginContainer/ScrollCon/VBoxContainer/PassiveIncome8"]
 texture_filter = 1
 custom_minimum_size = Vector2(160, 80)
 layout_mode = 2

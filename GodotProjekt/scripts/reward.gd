@@ -2,8 +2,8 @@ extends Control
 
 
 func _on_reward_countdown_timeout():
-	$continue_button.visible = true;
-	$continue_button.disabled = false;
+	$ContinueButton.visible = true;
+	$ContinueButton.disabled = false;
 
 func play_animation(price,price_node):
 	#price ist ein element im prices string in fortune_wheel.gd

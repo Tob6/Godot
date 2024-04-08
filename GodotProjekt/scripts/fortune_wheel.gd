@@ -36,7 +36,7 @@ var current_pos_angle = 0.0;
 
 func _ready():
 	instantiate_prices();
-	
+
 func _process(_delta):
 	if(spinning_finished && !rewarded):
 		reward();
@@ -138,8 +138,8 @@ func reward():
 	ScoreNode.increase_player_arbitrary(price.price,price.amount)
 	#print("given reward");
 	
-	$"../reward/reward_countdown".start();
-	$"../reward".play_animation(prices[price_index], price_node);
+	$"../Reward/RewardCountdown".start();
+	$"../Reward".play_animation(prices[price_index], price_node);
 	$"../../AchievementMenu".increase_wheels_spun();
 
 func is_inside(angle,sector):
@@ -149,3 +149,5 @@ func is_inside(angle,sector):
 	if(angle >= sector[0] && angle < sector[1]):
 		return true;
 	return false;
+
+

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://beqoj5hl3kqvv"]
+[gd_scene load_steps=7 format=3 uid="uid://beqoj5hl3kqvv"]
 
 [ext_resource type="Script" path="res://scripts/tipico.gd" id="1_m4jjy"]
 [ext_resource type="Script" path="res://scripts/fortune_wheel.gd" id="1_xb172"]
@@ -6,50 +6,32 @@
 [ext_resource type="Script" path="res://scripts/reward.gd" id="5_12axk"]
 [ext_resource type="Texture2D" uid="uid://d3h6mpv78bvhu" path="res://assets/textures/fortune_wheel/wheel_arrow.png" id="6_ft3gl"]
 
-[sub_resource type="GDScript" id="GDScript_ndgb5"]
-script/source = "extends Sprite2D
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	pass
-"
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fwfnb"]
 size = Vector2(502, 493)
 
-[node name="tipico" type="Node2D"]
+[node name="Tipico" type="Node2D"]
 position = Vector2(42, 0)
 script = ExtResource("1_m4jjy")
 
-[node name="fortune_wheel" type="Node2D" parent="."]
+[node name="FortuneWheel" type="Node2D" parent="."]
 position = Vector2(370, 325)
 script = ExtResource("1_xb172")
 
-[node name="Area2D" type="Area2D" parent="fortune_wheel"]
+[node name="Area2D" type="Area2D" parent="FortuneWheel"]
 
-[node name="wheel" type="Sprite2D" parent="fortune_wheel/Area2D"]
+[node name="WheelSprite" type="Sprite2D" parent="FortuneWheel/Area2D"]
 scale = Vector2(15, 15)
 texture = ExtResource("2_pqn6w")
-script = SubResource("GDScript_ndgb5")
 
-[node name="Node2D" type="Node2D" parent="fortune_wheel/Area2D/wheel"]
-position = Vector2(-19.8667, -19.5333)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="fortune_wheel/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FortuneWheel/Area2D"]
 position = Vector2(4, 1.5)
 shape = SubResource("RectangleShape2D_fwfnb")
 
-[node name="pointer" type="Sprite2D" parent="."]
+[node name="PointerSprite" type="Sprite2D" parent="."]
 position = Vector2(646, 344)
 texture = ExtResource("6_ft3gl")
 
-[node name="reward" type="Control" parent="."]
+[node name="Reward" type="Control" parent="."]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 3
 anchors_preset = 0
@@ -59,9 +41,9 @@ offset_right = 811.0
 offset_bottom = 396.0
 script = ExtResource("5_12axk")
 
-[node name="reward_sprite" type="Sprite2D" parent="reward"]
+[node name="RewardSprite" type="Sprite2D" parent="Reward"]
 
-[node name="continue_button" type="Button" parent="reward"]
+[node name="ContinueButton" type="Button" parent="Reward"]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 0
 offset_left = 110.0
@@ -71,9 +53,9 @@ offset_bottom = 77.0
 disabled = true
 text = "continue"
 
-[node name="reward_countdown" type="Timer" parent="reward"]
+[node name="RewardCountdown" type="Timer" parent="Reward"]
 one_shot = true
 
-[connection signal="input_event" from="fortune_wheel/Area2D" to="fortune_wheel" method="_on_area_2d_input_event"]
-[connection signal="pressed" from="reward/continue_button" to="." method="_on_continue_button_pressed"]
-[connection signal="timeout" from="reward/reward_countdown" to="reward" method="_on_reward_countdown_timeout"]
+[connection signal="input_event" from="FortuneWheel/Area2D" to="FortuneWheel" method="_on_area_2d_input_event"]
+[connection signal="pressed" from="Reward/ContinueButton" to="." method="_on_continue_button_pressed"]
+[connection signal="timeout" from="Reward/RewardCountdown" to="Reward" method="_on_reward_countdown_timeout"]
