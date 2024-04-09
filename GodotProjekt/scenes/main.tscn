@@ -224,6 +224,15 @@ scale = Vector2(4.33, 4.33)
 texture_normal = ExtResource("17_dgwer")
 script = ExtResource("18_ubdol")
 
+[node name="SettingsButton" type="TextureButton" parent="main"]
+offset_left = 29.0
+offset_top = 415.0
+offset_right = 215.0
+offset_bottom = 601.0
+texture_normal = ExtResource("24_qpvmh")
+stretch_mode = 0
+script = ExtResource("25_otpuq")
+
 [node name="AchievementMenu" parent="main" instance=ExtResource("9_au4c5")]
 visible = false
 offset_left = 85.0
@@ -247,12 +256,10 @@ text = "Wheel o' Fortune"
 script = ExtResource("18_5rfyy")
 
 [node name="PremiumShop" parent="main" instance=ExtResource("18_dynxl")]
-visible = false
-offset_left = 133.0
-offset_top = 179.0
-offset_right = 133.0
-offset_bottom = 179.0
-scale = Vector2(1.4, 1.4)
+offset_left = 274.0
+offset_top = 192.0
+offset_right = 274.0
+offset_bottom = 192.0
 
 [node name="Settings" parent="main" instance=ExtResource("18_7jhiu")]
 visible = false
@@ -260,15 +267,6 @@ offset_left = 652.0
 offset_top = 419.0
 offset_right = 652.0
 offset_bottom = 419.0
-
-[node name="SettingsButton" type="TextureButton" parent="main"]
-offset_left = 29.0
-offset_top = 415.0
-offset_right = 215.0
-offset_bottom = 601.0
-texture_normal = ExtResource("24_qpvmh")
-stretch_mode = 0
-script = ExtResource("25_otpuq")
 
 [node name="fortune_wheel" parent="." instance=ExtResource("17_qofxq")]
 visible = false
@@ -282,5 +280,5 @@ scale = Vector2(0.5, 0.5)
 [connection signal="pressed" from="main/DeleteSave" to="main/DeleteSave" method="_on_pressed"]
 [connection signal="pressed" from="main/AchievementMenuButton" to="main/AchievementMenuButton" method="_on_pressed"]
 [connection signal="pressed" from="main/PremiumShopButton" to="main/PremiumShopButton" method="_on_pressed"]
-[connection signal="button_down" from="main/button_fortune_wheel" to="main/button_fortune_wheel" method="_on_button_down"]
 [connection signal="pressed" from="main/SettingsButton" to="main/SettingsButton" method="_on_pressed"]
+[connection signal="button_down" from="main/button_fortune_wheel" to="main/button_fortune_wheel" method="_on_button_down"]

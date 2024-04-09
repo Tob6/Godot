@@ -40,12 +40,7 @@ layout_mode = 2
 layout_mode = 2
 theme = ExtResource("3_tky70")
 theme_override_constants/separation = 22
-
-[node name="ExitButton" type="TextureButton" parent="PanelContainer/VBoxContainer/TopBar"]
-custom_minimum_size = Vector2(70, 0)
-layout_mode = 2
-texture_normal = ExtResource("3_toy78")
-stretch_mode = 4
+alignment = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="PanelContainer/VBoxContainer/TopBar"]
 layout_mode = 2
@@ -79,6 +74,12 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "0"
 
+[node name="ExitButton" type="TextureButton" parent="PanelContainer/VBoxContainer/TopBar"]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+texture_normal = ExtResource("3_toy78")
+stretch_mode = 4
+
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 20
@@ -86,78 +87,135 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer"]
+[node name="OfferAndWheel" type="HBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 39
 
-[node name="offers" type="VBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+[node name="Offers" type="VBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer/OfferAndWheel"]
 layout_mode = 2
 theme_override_constants/separation = 40
 
-[node name="Gold" type="HBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer/HBoxContainer/offers"]
+[node name="Gold" type="HBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer/OfferAndWheel/Offers"]
 layout_mode = 2
 theme_override_constants/separation = 40
 
-[node name="Gold1" parent="PanelContainer/VBoxContainer/MarginContainer/HBoxContainer/offers/Gold" instance=ExtResource("1_72o7b")]
+[node name="Gold1" parent="PanelContainer/VBoxContainer/MarginContainer/OfferAndWheel/Offers/Gold" instance=ExtResource("1_72o7b")]
 layout_mode = 2
 metadata/type = "gold"
 metadata/amount = 10
 
-[node name="Gold2" parent="PanelContainer/VBoxContainer/MarginContainer/HBoxContainer/offers/Gold" instance=ExtResource("1_72o7b")]
+[node name="Gold2" parent="PanelContainer/VBoxContainer/MarginContainer/OfferAndWheel/Offers/Gold" instance=ExtResource("1_72o7b")]
 layout_mode = 2
 metadata/type = "gold"
 metadata/amount = 20
 
-[node name="Gold3" parent="PanelContainer/VBoxContainer/MarginContainer/HBoxContainer/offers/Gold" instance=ExtResource("1_72o7b")]
+[node name="Gold3" parent="PanelContainer/VBoxContainer/MarginContainer/OfferAndWheel/Offers/Gold" instance=ExtResource("1_72o7b")]
 layout_mode = 2
 metadata/type = "gold"
 metadata/amount = 50
 
-[node name="Diamond" type="HBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer/HBoxContainer/offers"]
+[node name="Diamond" type="HBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer/OfferAndWheel/Offers"]
 layout_mode = 2
 theme_override_constants/separation = 40
 
-[node name="Diamond1" parent="PanelContainer/VBoxContainer/MarginContainer/HBoxContainer/offers/Diamond" instance=ExtResource("1_72o7b")]
+[node name="Diamond1" parent="PanelContainer/VBoxContainer/MarginContainer/OfferAndWheel/Offers/Diamond" instance=ExtResource("1_72o7b")]
 layout_mode = 2
 
-[node name="Diamond2" parent="PanelContainer/VBoxContainer/MarginContainer/HBoxContainer/offers/Diamond" instance=ExtResource("1_72o7b")]
+[node name="Diamond2" parent="PanelContainer/VBoxContainer/MarginContainer/OfferAndWheel/Offers/Diamond" instance=ExtResource("1_72o7b")]
 layout_mode = 2
 metadata/amount = 3
 
-[node name="Diamond3" parent="PanelContainer/VBoxContainer/MarginContainer/HBoxContainer/offers/Diamond" instance=ExtResource("1_72o7b")]
+[node name="Diamond3" parent="PanelContainer/VBoxContainer/MarginContainer/OfferAndWheel/Offers/Diamond" instance=ExtResource("1_72o7b")]
 layout_mode = 2
 metadata/amount = 8
 
-[node name="SpinTheWheel" type="PanelContainer" parent="PanelContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+[node name="SpinTheWheel" type="PanelContainer" parent="PanelContainer/VBoxContainer/MarginContainer/OfferAndWheel"]
 layout_mode = 2
 theme = ExtResource("3_tky70")
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer/HBoxContainer/SpinTheWheel"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer/OfferAndWheel/SpinTheWheel"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer/HBoxContainer/SpinTheWheel/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer/OfferAndWheel/SpinTheWheel/MarginContainer"]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/VBoxContainer/MarginContainer/HBoxContainer/SpinTheWheel/MarginContainer/VBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/VBoxContainer/MarginContainer/OfferAndWheel/SpinTheWheel/MarginContainer/VBoxContainer"]
 layout_mode = 2
 texture = ExtResource("4_dx33l")
 expand_mode = 5
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer/HBoxContainer/SpinTheWheel/MarginContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer/OfferAndWheel/SpinTheWheel/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "Spin the wheel!"
 
-[node name="WheelButton" type="Button" parent="PanelContainer/VBoxContainer/MarginContainer/HBoxContainer/SpinTheWheel/MarginContainer/VBoxContainer"]
+[node name="WheelButton" type="Button" parent="PanelContainer/VBoxContainer/MarginContainer/OfferAndWheel/SpinTheWheel/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Free!"
 
+[node name="Spend Buttons" type="MarginContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer/Spend Buttons"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="ClickPowerIncrease" type="VBoxContainer" parent="PanelContainer/VBoxContainer/Spend Buttons/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_tky70")
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/VBoxContainer/Spend Buttons/HBoxContainer/ClickPowerIncrease"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer/Spend Buttons/HBoxContainer/ClickPowerIncrease/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 7
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/Spend Buttons/HBoxContainer/ClickPowerIncrease/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/Spend Buttons/HBoxContainer/ClickPowerIncrease/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "+1 Click Power"
+
+[node name="ClickPowerButton" type="Button" parent="PanelContainer/VBoxContainer/Spend Buttons/HBoxContainer/ClickPowerIncrease/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "20 Gold"
+
+[node name="PassiveIncomeIncrease" type="VBoxContainer" parent="PanelContainer/VBoxContainer/Spend Buttons/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_tky70")
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/VBoxContainer/Spend Buttons/HBoxContainer/PassiveIncomeIncrease"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer/Spend Buttons/HBoxContainer/PassiveIncomeIncrease/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 7
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/Spend Buttons/HBoxContainer/PassiveIncomeIncrease/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/Spend Buttons/HBoxContainer/PassiveIncomeIncrease/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "+1 Passive Income"
+
+[node name="PassiveIncomeButton" type="Button" parent="PanelContainer/VBoxContainer/Spend Buttons/HBoxContainer/PassiveIncomeIncrease/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "5 Diamonds"
+
 [connection signal="pressed" from="PanelContainer/VBoxContainer/TopBar/ExitButton" to="." method="_on_exit_button_pressed"]
-[connection signal="purchase" from="PanelContainer/VBoxContainer/MarginContainer/HBoxContainer/offers/Gold/Gold1" to="." method="_on_gold_1_purchase"]
-[connection signal="purchase" from="PanelContainer/VBoxContainer/MarginContainer/HBoxContainer/offers/Gold/Gold2" to="." method="_on_gold_2_purchase"]
-[connection signal="purchase" from="PanelContainer/VBoxContainer/MarginContainer/HBoxContainer/offers/Gold/Gold3" to="." method="_on_gold_3_purchase"]
-[connection signal="purchase" from="PanelContainer/VBoxContainer/MarginContainer/HBoxContainer/offers/Diamond/Diamond1" to="." method="_on_diamond_1_purchase"]
-[connection signal="purchase" from="PanelContainer/VBoxContainer/MarginContainer/HBoxContainer/offers/Diamond/Diamond2" to="." method="_on_diamond_2_purchase"]
-[connection signal="purchase" from="PanelContainer/VBoxContainer/MarginContainer/HBoxContainer/offers/Diamond/Diamond3" to="." method="_on_diamond_3_purchase"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/MarginContainer/HBoxContainer/SpinTheWheel/MarginContainer/VBoxContainer/WheelButton" to="." method="_on_wheel_button_pressed"]
+[connection signal="purchase" from="PanelContainer/VBoxContainer/MarginContainer/OfferAndWheel/Offers/Gold/Gold1" to="." method="_on_gold_1_purchase"]
+[connection signal="purchase" from="PanelContainer/VBoxContainer/MarginContainer/OfferAndWheel/Offers/Gold/Gold2" to="." method="_on_gold_2_purchase"]
+[connection signal="purchase" from="PanelContainer/VBoxContainer/MarginContainer/OfferAndWheel/Offers/Gold/Gold3" to="." method="_on_gold_3_purchase"]
+[connection signal="purchase" from="PanelContainer/VBoxContainer/MarginContainer/OfferAndWheel/Offers/Diamond/Diamond1" to="." method="_on_diamond_1_purchase"]
+[connection signal="purchase" from="PanelContainer/VBoxContainer/MarginContainer/OfferAndWheel/Offers/Diamond/Diamond2" to="." method="_on_diamond_2_purchase"]
+[connection signal="purchase" from="PanelContainer/VBoxContainer/MarginContainer/OfferAndWheel/Offers/Diamond/Diamond3" to="." method="_on_diamond_3_purchase"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/MarginContainer/OfferAndWheel/SpinTheWheel/MarginContainer/VBoxContainer/WheelButton" to="." method="_on_wheel_button_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Spend Buttons/HBoxContainer/ClickPowerIncrease/PanelContainer/MarginContainer/VBoxContainer/ClickPowerButton" to="." method="_on_click_power_button_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Spend Buttons/HBoxContainer/PassiveIncomeIncrease/PanelContainer/MarginContainer/VBoxContainer/PassiveIncomeButton" to="." method="_on_passive_income_button_pressed"]
