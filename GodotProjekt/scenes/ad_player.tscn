@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://c8kuf7est42lc"]
+[gd_scene load_steps=7 format=3 uid="uid://c8kuf7est42lc"]
 
 [ext_resource type="Script" path="res://scripts/ad_player/ad_player.gd" id="1_05eut"]
 [ext_resource type="Texture2D" uid="uid://dmwftnf8hyqhu" path="res://assets/textures/download_ad.png" id="2_g8h5e"]
 [ext_resource type="Script" path="res://scripts/ad_player/download_image.gd" id="2_gf2eu"]
 [ext_resource type="Script" path="res://scripts/ad_player/video_player.gd" id="3_g8tte"]
+[ext_resource type="Script" path="res://scenes/countdown_label.gd" id="5_d5fg6"]
+[ext_resource type="Theme" uid="uid://pnya52fbemkh" path="res://themes/achievement_menu_theme.tres" id="5_lemk7"]
 
 [node name="AdPlayer" type="Control"]
 layout_mode = 3
@@ -29,11 +31,50 @@ layout_mode = 2
 expand = true
 script = ExtResource("3_g8tte")
 
-[node name="Button" type="Button" parent="."]
+[node name="close" type="Node2D" parent="."]
 visible = false
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+scale = Vector2(0.75, 0.75)
+
+[node name="close_button" type="Button" parent="close"]
+visible = false
+custom_minimum_size = Vector2(31, 31)
+offset_right = 31.0
+offset_bottom = 31.0
+disabled = true
 text = "X"
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[node name="countdown_label" type="Label" parent="close"]
+modulate = Color(0, 0, 0, 1)
+offset_left = 8.33333
+offset_top = 4.33333
+offset_right = 25.3333
+offset_bottom = 27.3333
+theme = ExtResource("5_lemk7")
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("5_d5fg6")
+
+[node name="close_countdown" type="Timer" parent="close"]
+wait_time = 4.9
+one_shot = true
+
+[node name="continue" type="Node2D" parent="."]
+visible = false
+
+[node name="continue_button" type="Button" parent="continue"]
+custom_minimum_size = Vector2(31, 31)
+offset_right = 31.0
+offset_bottom = 31.0
+scale = Vector2(0.75, 0.75)
+disabled = true
+text = ">>"
+
+[node name="continue_countdown" type="Timer" parent="continue"]
+one_shot = true
+autostart = true
+
+[connection signal="pressed" from="close/close_button" to="." method="_on_close_button_pressed"]
+[connection signal="timeout" from="close/close_countdown" to="." method="_on_close_countdown_timeout"]
+[connection signal="pressed" from="continue/continue_button" to="." method="_on_continue_button_pressed"]
+[connection signal="timeout" from="continue/continue_countdown" to="." method="_on_continue_countdown_timeout"]

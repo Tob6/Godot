@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3qn6yd3gdbkt"
-path="res://.godot/imported/Diamond.png-8df5f47ed424a22432b75f036415d8f6.ctex"
+uid="uid://bhlqm3yqdiegs"
+path="res://.godot/imported/Yin Yang.png-0c9cb5602432e2707ec79beada987b4b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/Diamond.png"
-dest_files=["res://.godot/imported/Diamond.png-8df5f47ed424a22432b75f036415d8f6.ctex"]
+source_file="res://assets/textures/upgrades/Yin Yang.png"
+dest_files=["res://.godot/imported/Yin Yang.png-0c9cb5602432e2707ec79beada987b4b.ctex"]
 
 [params]
 

@@ -1,15 +1,16 @@
 extends Button
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-func _pressed():	
-	if ScoreNode.score >= get_meta("cost"):
-		ScoreNode.score_decrease(get_meta("cost"))
-		ScoreNode.increase_click_power(get_meta("click_increase"));
-		ScoreNode.increase_passive_income(get_meta("passive_increase"))
-
+func _process(_delta): # Updates Prices
+	set_text(NumSuffix.number_with_suffix(get_meta("cost") * ScoreNode.get_upgrade_mult(get_meta("Type")), 1) + " 🍎" );
+func _pressed():
+	var type = get_meta("Type")
+	if type == 0:
+		if (ScoreNode.score >= (get_meta("cost") * ScoreNode.get_upgrade_mult(type))):
+			ScoreNode.score_decrease(get_meta("cost") * ScoreNode.get_upgrade_mult(type))
+			ScoreNode.double_click_power();
+			ScoreNode.increase_upgrade_mult(type);
 	else:
-		print("Not enough Apples!")
+		if (ScoreNode.score >= (get_meta("cost") * ScoreNode.get_upgrade_mult(type))):
+			ScoreNode.score_decrease(get_meta("cost") * ScoreNode.get_upgrade_mult(type))
+			ScoreNode.increase_passive_income(get_meta("passive_increase"));
+			ScoreNode.increase_upgrade_mult(type);
