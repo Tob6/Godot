@@ -7,7 +7,7 @@ func _process(_delta):
 	$PanelContainer/VBoxContainer/TopBar/PanelContainer/HBoxContainer/GoldLabel.text = str(ScoreNode.player_gold)
 	$PanelContainer/VBoxContainer/TopBar/PanelContainer2/HBoxContainer2/DiamondLabel.text = str(ScoreNode.player_diamonds)
 
-func purchase(type, amount, price):
+func purchase(type, amount, _price):
 	if type == "diamond":
 		ScoreNode.increase_player_diamonds(amount)
 	elif type == "gold":
@@ -66,3 +66,15 @@ func _on_wheel_button_pressed():
 
 func _on_exit_button_pressed():
 	$".".visible = false
+
+
+func _on_click_power_button_pressed():
+	if ScoreNode.player_gold >= 20:
+		ScoreNode.increase_click_power(1)
+		ScoreNode.player_gold -= 20
+
+
+func _on_passive_income_button_pressed():
+	if ScoreNode.player_diamonds >= 5:
+		ScoreNode.increase_passive_income(1)
+		ScoreNode.player_diamonds -= 5

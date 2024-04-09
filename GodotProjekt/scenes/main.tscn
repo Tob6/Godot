@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://d0ssv5dwwdxs2"]
+[gd_scene load_steps=31 format=3 uid="uid://d0ssv5dwwdxs2"]
 
 [ext_resource type="PackedScene" uid="uid://lb6qd8sh0pvp" path="res://scenes/upgrades.tscn" id="1_ncpo6"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_uuduc"]
@@ -20,8 +20,12 @@
 [ext_resource type="Texture2D" uid="uid://bn42xlhs80y0u" path="res://assets/textures/PremiumShopIcon (1).png" id="17_dgwer"]
 [ext_resource type="PackedScene" uid="uid://beqoj5hl3kqvv" path="res://scenes/fortune_wheel.tscn" id="17_qofxq"]
 [ext_resource type="Script" path="res://scenes/button_fortune_wheel.gd" id="18_5rfyy"]
+[ext_resource type="PackedScene" uid="uid://dvt46cmrctrt0" path="res://scenes/settings.tscn" id="18_7jhiu"]
 [ext_resource type="PackedScene" uid="uid://cj0unp52lqfle" path="res://scenes/premium_shop.tscn" id="18_dynxl"]
+[ext_resource type="Script" path="res://scripts/premium_shop_button.gd" id="18_ubdol"]
 [ext_resource type="Texture2D" uid="uid://bwwbjpuwfvx2c" path="res://assets/textures/AchievementMenuIcon.png" id="20_riw2c"]
+[ext_resource type="Texture2D" uid="uid://cbmoocuxha15o" path="res://assets/textures/settings_icon2.png" id="24_qpvmh"]
+[ext_resource type="Script" path="res://scripts/settings_button.gd" id="25_otpuq"]
 
 [sub_resource type="Animation" id="Animation_buqdj"]
 length = 0.001
@@ -218,6 +222,16 @@ offset_right = 67.0
 offset_bottom = 289.0
 scale = Vector2(4.33, 4.33)
 texture_normal = ExtResource("17_dgwer")
+script = ExtResource("18_ubdol")
+
+[node name="SettingsButton" type="TextureButton" parent="main"]
+offset_left = 29.0
+offset_top = 415.0
+offset_right = 215.0
+offset_bottom = 601.0
+texture_normal = ExtResource("24_qpvmh")
+stretch_mode = 0
+script = ExtResource("25_otpuq")
 
 [node name="AchievementMenu" parent="main" instance=ExtResource("9_au4c5")]
 visible = false
@@ -242,11 +256,17 @@ text = "Wheel o' Fortune"
 script = ExtResource("18_5rfyy")
 
 [node name="PremiumShop" parent="main" instance=ExtResource("18_dynxl")]
-offset_left = 133.0
-offset_top = 179.0
-offset_right = 133.0
-offset_bottom = 179.0
-scale = Vector2(1.4, 1.4)
+offset_left = 274.0
+offset_top = 192.0
+offset_right = 274.0
+offset_bottom = 192.0
+
+[node name="Settings" parent="main" instance=ExtResource("18_7jhiu")]
+visible = false
+offset_left = 652.0
+offset_top = 419.0
+offset_right = 652.0
+offset_bottom = 419.0
 
 [node name="fortune_wheel" parent="." instance=ExtResource("17_qofxq")]
 visible = false
@@ -259,4 +279,6 @@ scale = Vector2(0.5, 0.5)
 [connection signal="pressed" from="main/Load" to="main/Load" method="_on_pressed"]
 [connection signal="pressed" from="main/DeleteSave" to="main/DeleteSave" method="_on_pressed"]
 [connection signal="pressed" from="main/AchievementMenuButton" to="main/AchievementMenuButton" method="_on_pressed"]
+[connection signal="pressed" from="main/PremiumShopButton" to="main/PremiumShopButton" method="_on_pressed"]
+[connection signal="pressed" from="main/SettingsButton" to="main/SettingsButton" method="_on_pressed"]
 [connection signal="button_down" from="main/button_fortune_wheel" to="main/button_fortune_wheel" method="_on_button_down"]
