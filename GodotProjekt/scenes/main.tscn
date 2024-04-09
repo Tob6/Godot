@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://d0ssv5dwwdxs2"]
+[gd_scene load_steps=28 format=3 uid="uid://d0ssv5dwwdxs2"]
 
 [ext_resource type="PackedScene" uid="uid://lb6qd8sh0pvp" path="res://scenes/upgrades.tscn" id="1_ncpo6"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_uuduc"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://bn42xlhs80y0u" path="res://assets/textures/PremiumShopIcon (1).png" id="17_dgwer"]
 [ext_resource type="PackedScene" uid="uid://beqoj5hl3kqvv" path="res://scenes/fortune_wheel.tscn" id="17_qofxq"]
 [ext_resource type="Script" path="res://scenes/button_fortune_wheel.gd" id="18_5rfyy"]
+[ext_resource type="PackedScene" uid="uid://dvt46cmrctrt0" path="res://scenes/settings.tscn" id="18_7jhiu"]
 [ext_resource type="PackedScene" uid="uid://cj0unp52lqfle" path="res://scenes/premium_shop.tscn" id="18_dynxl"]
 [ext_resource type="Texture2D" uid="uid://bwwbjpuwfvx2c" path="res://assets/textures/AchievementMenuIcon.png" id="20_riw2c"]
 
@@ -247,6 +248,12 @@ offset_top = 179.0
 offset_right = 133.0
 offset_bottom = 179.0
 scale = Vector2(1.4, 1.4)
+
+[node name="Settings" parent="main" instance=ExtResource("18_7jhiu")]
+offset_left = 28.0
+offset_top = 778.0
+offset_right = 28.0
+offset_bottom = 778.0
 
 [node name="fortune_wheel" parent="." instance=ExtResource("17_qofxq")]
 visible = false
