@@ -53,6 +53,10 @@ text = "continue"
 [node name="RewardCountdown" type="Timer" parent="Reward"]
 one_shot = true
 
+[node name="ForcedContinueCountdown" type="Timer" parent="Reward"]
+wait_time = 5.0
+
 [connection signal="input_event" from="FortuneWheel/Area2D" to="FortuneWheel" method="_on_area_2d_input_event"]
 [connection signal="pressed" from="Reward/ContinueButton" to="." method="_on_continue_button_pressed"]
 [connection signal="timeout" from="Reward/RewardCountdown" to="Reward" method="_on_reward_countdown_timeout"]
+[connection signal="timeout" from="Reward/ForcedContinueCountdown" to="." method="_on_forced_continue_countdown_timeout"]

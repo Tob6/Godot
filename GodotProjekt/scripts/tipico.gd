@@ -6,6 +6,13 @@ func _ready():
 	$"../Clicker".visible = false;
 	#pass # Replace with function body.
 
-func _on_continue_button_pressed():
+func shut_fortune_wheel():
 	$"../Clicker".visible = true;
 	get_parent().remove_child(self);
+
+func _on_continue_button_pressed():
+	shut_fortune_wheel();
+
+
+func _on_forced_continue_countdown_timeout():
+	shut_fortune_wheel();
