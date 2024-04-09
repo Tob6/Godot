@@ -106,7 +106,7 @@ func reduce_rotation():
 func instantiate_prices():
 	#for price in prices:
 	for i in range(prices.size()):
-		var angle_grad = 360.0/prices.size() * i;
+		var angle_grad = 360.0/prices.size() * i + 22.5;
 		var angle_rad = angle_grad * PI / 180;
 		
 		var price = prices[i];				#returns element in prices array

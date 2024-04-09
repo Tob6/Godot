@@ -81,3 +81,5 @@ func load_scene(scene_name : String):
 	if(scene_resource):
 		scene_instance = scene_resource.instantiate()
 		main_scene.add_child(scene_instance)
+		return scene_instance;
+	return null;
