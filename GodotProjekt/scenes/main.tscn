@@ -256,6 +256,7 @@ text = "Wheel o' Fortune"
 script = ExtResource("18_5rfyy")
 
 [node name="PremiumShop" parent="main" instance=ExtResource("18_dynxl")]
+visible = false
 offset_left = 274.0
 offset_top = 192.0
 offset_right = 274.0
@@ -263,10 +264,10 @@ offset_bottom = 192.0
 
 [node name="Settings" parent="main" instance=ExtResource("18_7jhiu")]
 visible = false
-offset_left = 652.0
-offset_top = 419.0
-offset_right = 652.0
-offset_bottom = 419.0
+offset_left = 709.0
+offset_top = 413.0
+offset_right = 709.0
+offset_bottom = 413.0
 
 [node name="fortune_wheel" parent="." instance=ExtResource("17_qofxq")]
 visible = false
