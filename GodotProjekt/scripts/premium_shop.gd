@@ -7,7 +7,8 @@ func _process(_delta):
 	$PanelContainer/VBoxContainer/TopBar/PanelContainer/HBoxContainer/GoldLabel.text = str(ScoreNode.player_gold)
 	$PanelContainer/VBoxContainer/TopBar/PanelContainer2/HBoxContainer2/DiamondLabel.text = str(ScoreNode.player_diamonds)
 
-func purchase(type, amount, _price):
+func purchase(type, amount, price):
+	$"../AchievementMenu".increase_money_spent(price);
 	if type == "diamond":
 		ScoreNode.increase_player_diamonds(amount)
 	elif type == "gold":
@@ -46,7 +47,12 @@ func _on_ad_finished():
 	
 func fortune_wheel():
 	var scene_fortune_wheel: PackedScene = preload("res://scenes/fortune_wheel.tscn")
-	Global.main_node_scene.load_scene('fortune_wheel');
+	var node_fortune_wheel = Global.main_node_scene.load_scene('fortune_wheel');
+	if(node_fortune_wheel != null):	#falls unerwarteter Fehler
+		node_fortune_wheel.set_position(Vector2(700,550));
+		$".".visible = false;
+		#$"../Clicker".visible = false;	#risky das bietet sich an anderer Stelle besser an
+		
 
 
 func _on_wheel_button_pressed():

@@ -21,7 +21,11 @@ func number_with_suffix(number,pos_after_comma = 2):
 	#"Shift" number to position by magnitude
 	number = number/(1000**(magnitude));
 	return (str(round_place_after_comma(number,pos_after_comma)) + str(suffix));
+	#return ("%10.1f %s" % [number, suffix]);
 
+
+# diese funktion wird mehr/weniger schon built-in umgesetzt:
+#  https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/gdscript_format_string.html#padding
 func round_place_after_comma(number,pos):
 	#pos is to which place after comma numbers is to be rounded
 	return floor(number*10**pos)/10**pos

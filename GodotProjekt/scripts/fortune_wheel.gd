@@ -10,14 +10,16 @@ extends Node2D
 
 var price_node = preload("res://scenes/fortune_wheel/wheel_price.tscn");
 
-var prices = [
-	{"price": "apple", "amount":10000,  "instance": null },
-	{"price": "gold", "amount":10, "instance": null},
-	{"price": "gold", "amount":15, "instance": null},
-	{"price": "apple", "amount":50, "instance": null},
-	{"price": "apple", "amount":1000, "instance": null},
-	{"price": "apple", "amount":5000, "instance": null},
-	{"price": "apple", "amount":2000, "instance": null},
+@onready var progress_level = $"../../".progress_level;	#Problem node not found
+
+@onready var prices = [
+	{"price": "apple", "amount":10000*progress_level,  "instance": null },
+	{"price": "gold", "amount":10*progress_level, "instance": null},
+	{"price": "apple", "amount":200*progress_level, "instance": null},
+	{"price": "apple", "amount":50*progress_level, "instance": null},
+	{"price": "gold", "amount":15*progress_level, "instance": null},
+	{"price": "apple", "amount":5000*progress_level, "instance": null},
+	{"price": "apple", "amount":2000*progress_level, "instance": null},
 	{"price": "diamond", "amount":1, "instance": null}
 ];
 
@@ -36,7 +38,7 @@ var current_pos_angle = 0.0;
 
 func _ready():
 	instantiate_prices();
-	
+
 func _process(_delta):
 	if(spinning_finished && !rewarded):
 		reward();
@@ -106,7 +108,7 @@ func reduce_rotation():
 func instantiate_prices():
 	#for price in prices:
 	for i in range(prices.size()):
-		var angle_grad = 360.0/prices.size() * i;
+		var angle_grad = 360.0/prices.size() * i + 22.5;
 		var angle_rad = angle_grad * PI / 180;
 		
 		var price = prices[i];				#returns element in prices array
@@ -121,25 +123,32 @@ func instantiate_prices():
 
 
 func reward():
-	print("rotation:" + str(rotation_degrees));
+	#print("rotation:" + str(rotation_degrees));
+	#rotation_degrees = abs(rotation_degrees);
+	var tmp_rotation
+	tmp_rotation = fmod(rotation_degrees,360.0);
+	#print("rotation aus degrees:" + str(rotation_degrees));
+	#print("actual rotation" + str(rotation));
 	
-	rotation_degrees = fmod(rotation_degrees,360.0);
-	print("rotation aus degrees:" + str(rotation_degrees));
-	print("actual rotation" + str(rotation));
-	var tmp_rotation = 360.0 - rotation_degrees;
-	print("tmprotation:" + str(tmp_rotation));
+	if(rotation_degrees >= 0):
+		tmp_rotation = 360.0 - tmp_rotation;
+	else:
+		tmp_rotation = abs(tmp_rotation);
+	#print("tmprotation:" + str(tmp_rotation));
 
 	var price_index = floor(tmp_rotation/(360.0/prices.size()))
-	print("index: " + str(price_index));
+	#print("index: " + str(price_index));
 	
 	var price = prices[price_index];
 	
 	#ScoreNode.score_increase_active(price.amount);
 	ScoreNode.increase_player_arbitrary(price.price,price.amount)
-	print("given reward");
+	#print("given reward");
 	
-	$"../reward/reward_countdown".start();
-	$"../reward".play_animation(prices[price_index], price_node);
+	$"../Reward/RewardCountdown".start();
+	$"../Reward".play_animation(prices[price_index], price_node);
+	$"../../AchievementMenu".increase_wheels_spun();
+	$"../Reward/ForcedContinueCountdown".start();
 
 func is_inside(angle,sector):
 	#is schon drienn?
@@ -148,3 +157,5 @@ func is_inside(angle,sector):
 	if(angle >= sector[0] && angle < sector[1]):
 		return true;
 	return false;
+
+

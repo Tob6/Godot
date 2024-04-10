@@ -18,3 +18,4 @@ func _process(_delta):
 
 func _on_button_pressed():
 	purchase.emit(get_meta("type"), get_meta("amount"), get_meta("price"))
+	

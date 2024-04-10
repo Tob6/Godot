@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c8pakhajyd2x"]
+[gd_scene load_steps=16 format=3 uid="uid://c8pakhajyd2x"]
 
 [ext_resource type="PackedScene" uid="uid://xt0xnld0ovfw" path="res://scenes/achievements/time_spent_achievement.tscn" id="1_47lg8"]
 [ext_resource type="Theme" uid="uid://pnya52fbemkh" path="res://themes/achievement_menu_theme.tres" id="1_gt2m5"]
@@ -9,8 +9,11 @@
 [ext_resource type="PackedScene" uid="uid://ir8j5r6rcahs" path="res://scenes/achievements/total_clicks.tscn" id="3_efrlv"]
 [ext_resource type="PackedScene" uid="uid://cytuwro180sc7" path="res://scenes/achievements/money_spent.tscn" id="4_irnce"]
 [ext_resource type="PackedScene" uid="uid://cixuybb2koeva" path="res://scenes/achievements/ads_watched.tscn" id="6_0pnbp"]
+[ext_resource type="Script" path="res://scripts/achievement_menu/achievements/money_spent.gd" id="7_clbto"]
 [ext_resource type="PackedScene" uid="uid://dqg0jx3add7yd" path="res://scenes/achievements/rewards_gotten.tscn" id="7_rt5r5"]
 [ext_resource type="PackedScene" uid="uid://dlchu0ee4qmpk" path="res://scenes/achievements/wheels_spun.tscn" id="8_0peii"]
+[ext_resource type="Script" path="res://scripts/achievement_menu/achievements/ads_watched.gd" id="9_tpl8j"]
+[ext_resource type="Script" path="res://scripts/achievement_menu/achievements/wheels_spun.gd" id="11_gp2ky"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1bymm"]
 texture = ExtResource("2_k8lku")
@@ -45,26 +48,29 @@ layout_mode = 2
 [node name="TotalClicksAchievement" parent="MarginContainer/achievement_menu/VBoxContainer" instance=ExtResource("3_efrlv")]
 layout_mode = 2
 
-[node name="TimeSpentAchievement3" parent="MarginContainer/achievement_menu/VBoxContainer" instance=ExtResource("4_irnce")]
+[node name="MoneySpentAchievement" parent="MarginContainer/achievement_menu/VBoxContainer" instance=ExtResource("4_irnce")]
 layout_mode = 2
+script = ExtResource("7_clbto")
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/achievement_menu"]
 layout_mode = 2
 theme_override_constants/separation = 18
 
-[node name="TimeSpentAchievement" parent="MarginContainer/achievement_menu/VBoxContainer2" instance=ExtResource("6_0pnbp")]
+[node name="AdsWatchedAchievement" parent="MarginContainer/achievement_menu/VBoxContainer2" instance=ExtResource("6_0pnbp")]
+layout_mode = 2
+script = ExtResource("9_tpl8j")
+
+[node name="RewardsGottenAchievement" parent="MarginContainer/achievement_menu/VBoxContainer2" instance=ExtResource("7_rt5r5")]
 layout_mode = 2
 
-[node name="TimeSpentAchievement2" parent="MarginContainer/achievement_menu/VBoxContainer2" instance=ExtResource("7_rt5r5")]
+[node name="WheelsSpunAchievement" parent="MarginContainer/achievement_menu/VBoxContainer2" instance=ExtResource("8_0peii")]
 layout_mode = 2
+script = ExtResource("11_gp2ky")
 
-[node name="TimeSpentAchievement3" parent="MarginContainer/achievement_menu/VBoxContainer2" instance=ExtResource("8_0peii")]
-layout_mode = 2
-
-[node name="Node2D" type="Node2D" parent="."]
+[node name="close" type="Node2D" parent="."]
 position = Vector2(944, 9)
 
-[node name="TextureButton" type="TextureButton" parent="Node2D"]
+[node name="TextureButton" type="TextureButton" parent="close"]
 offset_left = -4.0
 offset_top = -4.0
 offset_right = 11.0
@@ -77,4 +83,4 @@ texture_pressed = ExtResource("3_8vn7d")
 texture_hover = ExtResource("3_8vn7d")
 script = ExtResource("3_65e22")
 
-[connection signal="pressed" from="Node2D/TextureButton" to="Node2D/TextureButton" method="_on_pressed"]
+[connection signal="pressed" from="close/TextureButton" to="close/TextureButton" method="_on_pressed"]

@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://br01tgdrvthkr"]
-
-[ext_resource type="Texture2D" uid="uid://cr2npb8v5wmho" path="res://assets/textures/gold.png" id="1_4bm0d"]
-
-[node name="gold" type="Sprite2D"]
-position = Vector2(2.60003, 0.133301)
-texture = ExtResource("1_4bm0d")

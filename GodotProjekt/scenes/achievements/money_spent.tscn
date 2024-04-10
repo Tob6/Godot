@@ -51,11 +51,17 @@ theme_override_constants/margin_left = 15
 theme_override_constants/margin_right = 15
 
 [node name="ProgressBar" type="ProgressBar" parent="MarginContainer/VBoxContainer/MarginContainer"]
-custom_minimum_size = Vector2(300, 0)
+custom_minimum_size = Vector2(300, 27)
 layout_mode = 2
 theme = ExtResource("1_wm7jb")
-value = 50.0
-rounded = true
+max_value = 50.0
+show_percentage = false
+
+[node name="BarText" type="RichTextLabel" parent="MarginContainer/VBoxContainer/MarginContainer/ProgressBar"]
+layout_mode = 0
+offset_right = 300.0
+offset_bottom = 27.0
+bbcode_enabled = true
 
 [node name="BorderSprite" type="Sprite2D" parent="."]
 position = Vector2(221.031, 51)

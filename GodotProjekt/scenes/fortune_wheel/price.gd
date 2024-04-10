@@ -11,5 +11,5 @@ func _ready():
 func set_tex(text):
 	#remove_child();
 	var price_label = label.instantiate();
-	price_label.text = text;
+	price_label.text = NumSuffix.number_with_suffix(float(text));
 	$".".call_deferred("add_child",price_label);
