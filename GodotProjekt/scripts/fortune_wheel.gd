@@ -10,14 +10,14 @@ extends Node2D
 
 var price_node = preload("res://scenes/fortune_wheel/wheel_price.tscn");
 
-@onready var progress_level = $"../../".progress_level;	#Problem node not found
+@onready var progress_level = floor($"../../".progress_level);	#Problem node not found
 
 @onready var prices = [
 	{"price": "apple", "amount":10000*progress_level,  "instance": null },
-	{"price": "gold", "amount":10*progress_level, "instance": null},
+	{"price": "gold", "amount":10+progress_level, "instance": null},
 	{"price": "apple", "amount":200*progress_level, "instance": null},
 	{"price": "apple", "amount":50*progress_level, "instance": null},
-	{"price": "gold", "amount":15*progress_level, "instance": null},
+	{"price": "gold", "amount":15+progress_level, "instance": null},
 	{"price": "apple", "amount":5000*progress_level, "instance": null},
 	{"price": "apple", "amount":2000*progress_level, "instance": null},
 	{"price": "diamond", "amount":1, "instance": null}

@@ -57,7 +57,7 @@ func fortune_wheel():
 
 func _on_wheel_button_pressed():
 	if first_time_fortune_wheel == false:
-		$PanelContainer/VBoxContainer/MarginContainer/HBoxContainer/SpinTheWheel/MarginContainer/VBoxContainer/WheelButton.text = "Watch Ad!"
+		$PanelContainer/VBoxContainer/MarginContainer/OfferAndWheel/SpinTheWheel/MarginContainer/VBoxContainer/WheelButton.text = "Watch Ad!"
 		first_time_fortune_wheel = true
 		fortune_wheel()
 	else:

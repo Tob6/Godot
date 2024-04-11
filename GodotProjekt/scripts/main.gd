@@ -4,15 +4,18 @@ var main_scene = self;
 var scene_instance;
 var progress_level = 0;
 
+@onready var bg_music = $"BackgroundMusic"
+
 func _ready():
 	Global.main_node_scene = self;
 	load_game()
+	bg_music.play();
 
 func _process(_delta):
 	#var progress_metric = (ScoreNode.click_power + ScoreNode.passive_income)/2;
 	#print("prog metric log: " + str(log(progress_metric)) );
 	progress_level = log(ScoreNode.click_power) / log(2);#max(progress_level, floor(log(progress_metric)) );
-	print("prog lvl: " + str(progress_level));
+	#print("prog lvl: " + str(progress_level));
 
 func create_save():
 	#var total_clicks = 
@@ -90,3 +93,4 @@ func load_scene(scene_name : String):
 		main_scene.add_child(scene_instance)
 		return scene_instance;
 	return null;
+

@@ -1,8 +1,12 @@
 extends Control
 
 signal ad_finished
-
+#@onready var volume_tmp = $"../Settings/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/MusicSlider".value;
+#@onready var min_volume = $"../Settings/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/MusicSlider".min_value;
 func _ready():
+	
+	$"../../Settings".music_slider.value = -50;
+	
 	var rng = RandomNumberGenerator.new()
 	
 	var viewport_size = get_viewport().get_visible_rect().size;
@@ -46,9 +50,10 @@ func _on_continue_button_pressed():
 
 func _on_close_button_pressed():
 	#closing button was pressed
-	$"../../AchievementMenu".increase_ads_watched();
-	ad_finished.emit()
-	get_parent().remove_child(self)
+	close_ad();
+	#$"../../AchievementMenu".increase_ads_watched();
+	#ad_finished.emit()
+	#get_parent().remove_child(self)
 	
 
 
@@ -64,3 +69,10 @@ func _on_continue_countdown_timeout():
 	#enable pressing continue button
 	$continue.visible = true;
 	$continue/continue_button.disabled = false;
+
+func close_ad():
+	#$"../Settings".value = -50;
+	
+	$"../../AchievementMenu".increase_ads_watched();
+	ad_finished.emit()
+	get_parent().remove_child(self)
